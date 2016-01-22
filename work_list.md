@@ -1,0 +1,26 @@
+- Scaffold directory tree
+- Scaffold webpages
+    - Search
+    - Results
+    - History
+    - About Us
+- Research APIs
+    - Zillow
+    - Google Maps
+- Build search functionality
+    - submitData()
+        - getZillowData()
+            - getSearchResulst()
+            - getZestimate()
+        - getMapsData()
+        - saveHomeLocally()
+    - Display results
+        - checkMyRent()
+- Build History
+    - LocalStorage
+
+- Build Maps
+- Get images
+    - Logos
+    - Rent results images
+    - Bio pictures
