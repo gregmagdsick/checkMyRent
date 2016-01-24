@@ -1,0 +1,14 @@
+/******************************
+Flexbox Layout
+*******************************/
+body, header, footer {
+  display: flex;
+}
+
+body {
+  flex-direction: column;
+}
+
+.pg1-input-form  {
+  margin: auto;
+}
