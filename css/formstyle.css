@@ -663,7 +663,7 @@ right: -12%;
   align-items: flex-start;
 }
 
-.checkbox-grid  {
+.checkbox-grid, .header-container  {
   display: flex;
   /*align-content: center;*/
 }
@@ -706,3 +706,10 @@ right: -12%;
 	border-style: solid;
 }
 /*** input form**/
+/** media queries revised*/
+
+@media (min-width:1024px){
+  .header-container {
+    align-self: flex-start;
+  }
+}
