@@ -2,23 +2,37 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Responsive Design</title>
+        <title>checkMyRent</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/png" href="img/favicon.jpg">
-        <link rel="stylesheet" href="css/normalize.min.css">
+        <!-- <link rel="icon" type="image/png" href="img/favicon.jpg"> --> <!--Favicon to be chosen later -->
+        <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
 
       <header class="header">
         <h1 class="logo">Logo</h1>
-        <ul class="nav">
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#">Free Trial</a></li>
-        </ul>
       </header>
 
-    </body>
+        <form class="pg1-input-form">
+            <fieldset>
+                <legend>Rental properties details</legend>
+                <input type="radio" name="Apartment"><br>
+                <input type="radio" name="House"><br>
+                <input type="text" name="Monthly rent"><br>
+                <input type="text" name="Sq feet"><br>
+                <input type="text" name="Beds"><br>
+                <input type="text" name="Baths"><br>
+                <input type="text" name="Street address"><br>
+                <input type="text" name="ZIP"><br>
+                <button type="submit">Check rent</button>
+              </fieldset>
+           </form>
+    <footer>
+      <ul class="nav">
+        <li><a href="#">About us</a></li>
+        <li><a href="#">History</a></li>
+      </ul>
+   </footer>
+</body>
 </html>
