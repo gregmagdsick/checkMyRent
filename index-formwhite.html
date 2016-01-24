@@ -1,113 +1,79 @@
 <!doctype html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>checkMyRent</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="icon" type="image/png" href="img/favicon.jpg"> --> <!--Favicon to be chosen later -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/formstyle.css">
-    </head>
-    <body>
 
-      <header class="header">
+<head>
+    <meta charset="utf-8">
+    <title>checkMyRent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="icon" type="image/png" href="img/favicon.jpg"> -->
+    <!--Favicon to be chosen later -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/formstyle.css">
+</head>
+
+<body>
+
+    <header class="header">
         <h1 class="logo">Logo</h1>
-      </header>
+    </header>
 
-        <!-- <form class="pg1-input-form">
-            <fieldset>
-                <legend>Rental properties details</legend>
-                <label for="apartment">Apartment</label>
-                <input type="radio" name="apartment" id="apartmentButton" checked><br>
-                <label for="house">House</label>
-                <input type="radio" name="house" id="houseButton"><br>
-                <input type="text" name="monthly rent"><br>
-                <input type="text" name="sq feet"><br>
-                <input type="text" name="beds"><br>
-                <input type="text" name="baths"><br>
-                <input type="text" name="street address"><br>
-                <input type="text" name="zip"><br>
-                <button type="submit">Check rent</button>
-              </fieldset>
-           </form> -->
-           <!--start-login-form-->
-				<div class="main">
-			    	<div class="login-head">
-					    <h1>Elegant Login  and Register forms</h1>
-					</div>
-					<div  class="wrap">
-						  <div class="Regisration">
-						  	<div class="Regisration-head">
-						    	<h2><span></span>Register</h2>
-						 	 </div>
-						  	<form>
-						  		<input type="text" value="First Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'First Name';}" >
-						  		<input type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}" >
-						  		<input type="text" value="Email Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email Address';}" >
-						  		<input type="text" value="User Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}" >
-								<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" >
-								<input type="password" value=" Confirm Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' Confirm Password';}" >
-								 <div class="Remember-me">
-								<div class="p-container">
-								<label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>I agree to the Terms and Conditions</label>
-								<div class ="clear"></div>
-							</div>
+    <div class="main">
+        <div class="login-head">
+            <h1>Elegant Login  and Register forms</h1>
+        </div>
 
-								<div class="submit">
-									<input type="submit" onclick="myFunction()" value="Sign Me Up >" >
-								</div>
-									<div class="clear"> </div>
-								</div>
+        <div class="Login">
+            <div class="Login-head">
+                <h3>LOGIN</h3>
+            </div>
 
-						  </form>
-					</div>
-					<div class="Login">
-							<div class="Login-head">
-						    	<h3>LOGIN</h3>
-						 	</div>
+            <form>
+                <div class="ticker">
+                    <h4>Username</h4>
+                    <input type="text" value="John Smith" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'John Smith';}"><span> </span>
+                    <div class="clear"> </div>
+                </div>
+                <div>
+                    <h4>Password</h4>
+                    <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}">
+                    <div class="clear"> </div>
+                </div>
+                <div class="checkbox-grid">
+                    <div class="inline-group green">
+                        <label class="radio">
+                            <input type="radio" name="radio-inline"><i> </i>Remember me</label>
+                        <div class="clear"> </div>
+                    </div>
 
-						<form>
-								<div class="ticker">
-									<h4>Username</h4>
-						  			<input type="text" value="John Smith" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'John Smith';}" ><span> </span>
-						  			<div class="clear"> </div>
-						  		</div>
-						  		<div>
-						  		<h4>Password</h4>
-								<input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" >
-								  			<div class="clear"> </div>
-								</div>
-								<div class="checkbox-grid">
-									<div class="inline-group green">
-									<label class="radio"><input type="radio" name="radio-inline"><i> </i>Remember me</label>
-									<div class="clear"> </div>
-									</div>
+                </div>
 
-								</div>
+                <div class="submit-button">
+                    <input type="submit" onclick="myFunction()" value="LOGIN  >">
+                </div>
+                <div class="clear"> </div>
+        </div>
 
-								<div class="submit-button">
-									<input type="submit" onclick="myFunction()" value="LOGIN  >" >
-								</div>
-									<div class="clear"> </div>
-								</div>
-
-						  </form>
-					</div>
-			</div>
-				<!--//End-login-form-->
-						<div class ="copy-right">
-							<p> &copy; 2014 elegant login and Register forms. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a></p>
-						</div>
-			  </div>
+        </form>
+    </div>
+    </div>
+    <!--//End-login-form-->
+    <div class="copy-right">
+        <p> &copy; 2014 elegant login and Register forms. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a>
+        </p>
+    </div>
+    </div>
 
 
 
     <footer class="footer">
-      <ul class="nav">
-        <li><a href="#">About us</a></li>
-        <li><a href="#">History</a></li>
-      </ul>
-   </footer>
+        <ul class="nav">
+            <li><a href="#">About us</a>
+            </li>
+            <li><a href="#">History</a>
+            </li>
+        </ul>
+    </footer>
 </body>
+
 </html>

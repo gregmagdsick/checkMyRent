@@ -21,12 +21,6 @@ body {
   min-height: 100vh;
 }
 
-.pg1-input-form  {
-  max-height: 80%;
-  max-width: 60%;
-  align-self: center;
-  flex:1;
-}
 
 .footer {
   align-self: center;

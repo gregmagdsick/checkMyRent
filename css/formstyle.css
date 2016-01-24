@@ -652,3 +652,57 @@ right: -12%;
 	left:-4%;
 	}
 }
+
+/*** revised CSS ***/
+
+/*** radio buttons**/
+.checkbox-grid .radio-main{
+	display: flex;
+	display:inline;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.checkbox-grid  {
+  display: flex;
+  /*align-content: center;*/
+}
+
+.inline-group-green {
+  display: flex;
+  justify-content: flex-start;
+}
+.radio-main {
+  padding: 10%;
+  color: #fff;
+}
+.input-radio {
+  margin: 10px;
+
+}
+.checkbox-grid .inline-group .radio,
+.checkbox-grid .inline-group .checkbox {
+	float: none;
+}
+
+.checkbox-grid .radio{
+	margin: 18px auto;
+  padding-left: 0;
+
+}
+.checkbox-grid .radio-main input {
+	position: absolute;
+	left: -9999px;
+}
+.checkbox-grid .radio-main{
+	position: absolute;
+	top: -1px;
+	/*left: 117px;*/
+	display: inline;
+	width:18px;
+	height:18px;
+	outline: none;
+	border-width: 2px;
+	border-style: solid;
+}
+/*** input form**/
