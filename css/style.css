@@ -1,14 +1,56 @@
 /******************************
+General Layout
+*******************************/
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+
+/******************************
 Flexbox Layout
 *******************************/
-body, header, footer {
+body, .header, .footer, .nav {
   display: flex;
 }
 
 body {
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .pg1-input-form  {
-  margin: auto;
+  max-height: 80%;
+  max-width: 60%;
+  align-self: center;
+  flex:1;
+}
+
+.footer {
+  align-self: center;
+  align-items: center;
+  max-height: 10%;
+  width: 40%;
+  border: 2px solid black;
+  }
+
+.nav {
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.nav li {
+  list-style-type: none;
+  align-self: center;
+
+}
+
+.nav li a {
+  text-decoration: none;
+  text-align: center;
+
 }
