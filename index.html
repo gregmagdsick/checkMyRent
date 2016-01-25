@@ -1,16 +1,73 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Check My Rent</title>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="history.html"><img src="img/history.png" alt="Search History" class="navImg"></a></li>
-        <li><a href="about_us.html"><img src="img/About us.png" alt="About Us" class="navImg"></a></li>
-      </ul>
-    </nav>
-  </body>
+    <title>checkMyRent</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="icon" type="image/png" href="img/favicon.jpg"> -->
+    <!--Favicon to be chosen later -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styleIndex.css">
+    <link rel="stylesheet" href="css/styleForm.css">
+</head>
+<body>
+<section class="header-container">
+    <header class="header">
+        <h1 class="logo">Logo</h1>
+    </header>
+</section>
+    <div class="main">
+        <div class="login-head">
+            <h1></h1>
+        </div>
+        <div class="wrap">
+            <div class="Regisration">
+                <div class="Regisration-head">
+                    <h2><span></span>Check my rent</h2>
+                </div>
+                <form action="results-es.html" method="get">
+                      <div class="inline-group green">
+                        <label class="radio-main">
+                          <input type="radio" name="residenceType" class="input-radio" />Apartment
+                        </label>
+                        <label class="radio-main">
+                          <input type="radio" name="residenceType" class="input-radio" />House
+                      </div>
+                    <input type="text" name="rent" value="Monthly Rent" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Monthly Rent';}" >
+                    <input type="text" name = "sq-feet" value="Sq feet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Sq Feet';}" >
+                    <input type="text" name="beds" value="Beds" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Beds';}" >
+                    <input type="text" name = "baths" value="Baths" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Baths';}">
+                    <input type="text" name="street" value="Sreet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Street address';}">
+                    <input type="text" name="zip" value=" Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' ZIP';}">
+                    <div class="Remember-me">
+                        <!-- <div class="p-container">
+                            <label class="checkbox">
+                                <input type="checkbox" name="checkbox" checked="checked"><i></i>I agree to the Terms and Conditions</label>
+                            <div class="clear"></div>
+                        </div> -->
+                        <div class="submit">
+                            <input type="submit" value="Check rent" id="checkMyRent">
+                        </div>
+                        <div class="clear"> </div>
+                    </div>
+
+                </form>
+            </div><!--end of registration-->
+            <div class="copy-right">
+                <!-- <p> &copy; 2014 elegant login and Register forms. All rights reserved | Template by <a href="http://w3layouts.com/">W3layouts</a>
+                </p> -->
+            </div>
+        </div><!--end of wrap-->
+      </div><!--end of main-->
+        <footer class="footer">
+            <ul class="nav">
+                <li><a href="#">About us</a>
+                </li>
+                <li><a href="#">History</a>
+                </li>
+            </ul>
+        </footer>
+      <script src="js/submitButton.js" type="text/javascript"</script>
+    </body>
 </html>

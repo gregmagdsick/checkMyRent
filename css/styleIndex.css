@@ -1,0 +1,53 @@
+
+/******************************
+General Layout
+*******************************/
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+html {
+  box-sizing: border-box;
+}
+
+/******************************
+Flexbox Layout
+*******************************/
+body, .header, .footer, .nav {
+  display: flex;
+}
+
+body {
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+  min-height: 100vh;
+}
+
+
+.footer {
+  align-self: center;
+  align-items: center;
+  max-height: 10%;
+  width: 40%;
+  border: 2px solid black;
+  }
+
+.nav {
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.nav li {
+  list-style-type: none;
+  align-self: center;
+
+}
+
+.nav li a {
+  text-decoration: none;
+  text-align: center;
+
+}
