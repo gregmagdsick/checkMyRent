@@ -17,4 +17,5 @@ Saturday, 01/23/16
 * fav-icon placeholder included - to decide on the icon<br>
 * section "header-container" is a placeholder for the logo<br>
 * empty h1 tag inside the "login-head" if we want to add some text, otherwise will take it out<br>
+* same as above for terms and conditions checkbox before submit button<br>
 * nav bar at the bottom of the page only for the layout purposes - Greg is working on this issue<br>
