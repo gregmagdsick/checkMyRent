@@ -6,12 +6,12 @@ callZillowButton.addEventListener('click', function(){
 });
 
 function makeZillowAjaxCall(){
-  var url = 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=1551-NW-195th-St&citystatezip=shoreline-washington-98177&rentzestimate=true';
+  var url = 'http://cors.io/?u=http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=1551-NW-195th-St&citystatezip=shoreline-washington-98177&rentzestimate=true';
   var encodedurl = encodeURIComponent(url);
 
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:8888/proxy/proxy_xml.php?url=' + encodedurl,
+    url: url,
     dataType: 'xml',
     success: function (xml){
       console.log(xml);
