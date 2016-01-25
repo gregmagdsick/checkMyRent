@@ -10,6 +10,6 @@ function getInputForm() {
 
 var QueryString = getInputForm();
 
-var residenceType = QueryString['residenceType'];
-var rent = QueryString['rent'];
+var typeResidence = QueryString['residenceType'];
+var monthlyRent = QueryString['rent'];
 console.log(rent);
