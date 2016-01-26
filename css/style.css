@@ -6,3 +6,26 @@
 li {
   list-style-type: none;
 }
+
+body {
+  display: inline-flex;
+  width: 99%;
+}
+
+.leftNavbar {
+  width: 20%;
+  height: 100%;
+  border: 1px black solid;
+  position: fixed;
+}
+
+.invisibleSpacerDiv {
+  width: 22%;
+  border: 1px blue solid;
+}
+
+.mainContent{
+  width: 78%;
+  border: 1px blue solid;
+  display: inline-flex;
+}
