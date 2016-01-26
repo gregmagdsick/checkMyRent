@@ -1,14 +1,14 @@
 
-var x = document.getElementById('button')
+var history = document.getElementById('submit');
 
-x.addEventListiner('click', function(event){
+history.addEventListiner('click'), function(history){
   getElementById('userAddress')
   getElementById('userZip')
   getElementById('userbeds')
   getElementById('usersqFeet')
   getElementById('userbaths')
   getElementById('usersMonthlyRent')
-})
+};
 
 
 
