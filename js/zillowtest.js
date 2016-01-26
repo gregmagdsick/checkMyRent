@@ -1,18 +1,33 @@
 var callZillowButton = document.getElementById('callZillowButton');
 
 callZillowButton.addEventListener('click', function(){
-  makeZillowAjaxCall('1551 NW 195th St', 'shoreline', 'washington', 98177);
+  getZillowResults('1551 NW 195th St', 'shoreline', 'washington', 98177);
 });
 
+function getZillowResults(address, city, state, zip){
+  var returnedJson = makeZillowAjaxCall(address, city, state, zip, formatZillowResults);
+  console.log('inside getZillowResults');
+  console.log(returnedJson);
+  // var latLng = returnedJson;
+
+}
+
+function formatZillowResults(returnedJson){
+  console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
+  var result = returnedJson['SearchResults:searchresults']['response']['results']['result'];
+
+}
+
+
 //using a CORS proxy at https://crossorigin.me/
-function makeZillowAjaxCall(address, city, state, zip){
+function makeZillowAjaxCall(address, city, state, zip, callbackFunction){
   var inputAddress = address;
   var formattedAddress = inputAddress.replace(/ /g, '-');
   var zipCode = zip.toString();
   var cityStateZip = city.toLowerCase() + '-' + state.toLowerCase() + '-' + zip;
   var url = 'http://crossorigin.me/' + 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=' + formattedAddress + '&citystatezip=' + cityStateZip + '&rentzestimate=true';
   console.log(url);
-  // var url = 'http://crossorigin.me/' + 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=1551-NW-195th-St&citystatezip=shoreline-washington-98177&rentzestimate=true';
+
 
   $.ajax({
     type: 'GET',
@@ -22,12 +37,13 @@ function makeZillowAjaxCall(address, city, state, zip){
       console.log(xml);
       var returnedJson = xmlToJson(xml);
       console.log(returnedJson);
-      return returnedJson;
+      callbackFunction(returnedJson);
     },
     error: function(){
       console.log('error');
     }
   });
+
 }
 
 //code taken from https://davidwalsh.name/convert-xml-json
