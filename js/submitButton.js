@@ -5,7 +5,7 @@ window.addEventListener('load', initializeIndex)
 
 function initializeIndex(){
   if (localStorage.getItem('counter')){
-    counter = localStorage.getItem('counter');
+    counter = Number(localStorage.getItem('counter'));
   }
 }
 
@@ -86,7 +86,7 @@ function checkFormInput(getRentForm) {
 
   function storeZillowInLs(result) {
     localStorage.setItem('mostRecentLat', parseFloat(result['address']['latitude']['#text']));
-    localStorage.setItem('mostRecentLong', parseFloat(result['address']['longitude']['#text']));
+    localStorage.setItem('mostRecentLng', parseFloat(result['address']['longitude']['#text']));
     localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
     localStorage.setItem('mostRecentCounter', counter - 1);
   }
