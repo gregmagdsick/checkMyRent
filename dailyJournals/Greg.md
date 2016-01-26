@@ -1,4 +1,11 @@
-Monday 1/5/15
+Tuesday 1/26/16
+  Major work day today
+  * I led our meeting at the beginning of the day setting up our biggest technical challenges left, so we worked on those first
+  * I got our google map to populate directly from our Zillow API call
+  * I worked out how we needed to refactor our code from it's current state as test pieces to actually run where we need it to run for our MVP
+  * I helped Evan a little more with the history page work he was doing yesterday
+
+Monday 1/25/16
   I had norovirus, so stayed home and worked from there. We got a lot done, I didn't contribute as much
   * I built our nav bars for each page
   * I got a basic google map api call working in maptest.js to get us a map, and put it on maptest.html, to avoid merge conflicts
