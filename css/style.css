@@ -3,13 +3,24 @@
   widows: 40px;
 }
 
-li {
+.navBarImageHolder{
+  width: 40px;
+  border-radius: 5px;
+  background-color: rgb(90, 186,0);
+  padding: 10px;
+}
+
+.navBarItem {
   list-style-type: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  ;
 }
 
 body {
   display: inline-flex;
   width: 99%;
+  background-color: #E2E3DF;
 }
 
 .leftNavbar {
@@ -17,24 +28,26 @@ body {
   height: 100%;
   border: 1px black solid;
   position: fixed;
+  /*align-items: center;*/
+  flex-direction: column;
+  display: flex;
+  background-color: rgb(48, 52, 60);
+}
+
+.navBarList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 .invisibleSpacerDiv {
   width: 22%;
-  border: 1px blue solid;
 }
 
 .mainContent{
   width: 78%;
-  border: 1px blue solid;
   display: inline-flex;
   flex-wrap: wrap;
-}
-
-.aboutUsPersonHolder{
-  width: 45%;
-}
-
-.aboutUsPersonPhoto{
-  width: 100%;
+  justify-content: space-around;
 }
