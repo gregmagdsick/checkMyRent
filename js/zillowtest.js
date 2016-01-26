@@ -1,90 +1,67 @@
 var callZillowButton = document.getElementById('callZillowButton');
 
-
 callZillowButton.addEventListener('click', function(){
-  makeZillowAjaxCall();
+  makeZillowAjaxCall('1551 NW 195th St', 'shoreline', 'washington', 98177);
 });
 
-function makeZillowAjaxCall(){
-  var url = 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=1551-NW-195th-St&citystatezip=shoreline-washington-98177&rentzestimate=true';
-  var encodedurl = encodeURIComponent(url);
+//using a CORS proxy at https://crossorigin.me/
+function makeZillowAjaxCall(address, city, state, zip){
+  var inputAddress = address;
+  var formattedAddress = inputAddress.replace(/ /g, '-');
+  var zipCode = zip.toString();
+  var cityStateZip = city.toLowerCase() + '-' + state.toLowerCase() + '-' + zip;
+  var url = 'http://crossorigin.me/' + 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=' + formattedAddress + '&citystatezip=' + cityStateZip + '&rentzestimate=true';
+  console.log(url);
+  // var url = 'http://crossorigin.me/' + 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=1551-NW-195th-St&citystatezip=shoreline-washington-98177&rentzestimate=true';
 
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:8888/proxy/proxy_xml.php?url=' + encodedurl,
+    url: url,
     dataType: 'xml',
     success: function (xml){
       console.log(xml);
+      var returnedJson = xmlToJson(xml);
+      console.log(returnedJson);
+      return returnedJson;
     },
     error: function(){
       console.log('error');
     }
-});
+  });
 }
 
-// function makeZillowAjaxCall(){
-//   console.log('button linked to makeZillowAjaxCall');
-//   $.ajax({
-//     url: 'http://www.zillow.com/webservice/GetSearchResults.htm',
-//     xhrfields: {
-//       'withCredentials': true,
-//
-//     },
-//     method: 'GET',
-//     headers: {
-//       'Access-Control-Allow-Origin': '*',
-//       'Access-Control-Allow-Credentials': true,
-//       'zws-id': 'X1-ZWz19vtt4r677v_3v2ae',
-//       'address': '1551-NW-195th-St',
-//       'citystatezip': 'shoreline-washington-98177',
-//       'rentzestimate': true
-//     },
-//     success: function(){
-//       console.log('success');
-//     },
-//     error: function(){
-//       console.log('error');
-//     }
-//   })
-//   console.log('ajax call finished');
-// }
-
-// example zillow url call that works in postman:
-// http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=1551-NW-195th-St&citystatezip=shoreline-washington-98177&rentzestimate=true
-
-
-// Sam's example code
-
-// var pics = [];
-//
-// $.ajax({
-//   url: 'https://api.imgur.com/3/album/BeiVs.json',
-//   method: 'GET',
-//   headers: {
-//     'Authorization': 'Client-ID 9a3c388c7b28313'
-//   }
-// })
-// .done(function(res) {
-//   pics = res.data.images;
-//   console.log(pics);
-//
-//   for (var i = 0; i < pics.length; i++) {
-//     photoArray[i].path = pics[i].link;
-//   }
-//
-//   showFromImgur();
-// })
-// .fail(function(err) {
-//   console.log(err);
-// });
-//
-// function showFromImgur() {
-//   var rand = Math.floor(Math.random() * pics.length + 1);
-//   var displayPic = '<img src="' + pics[rand].link + '">';
-//   $('#picContainer').html(displayPic);
-// }
-//
-// $('#another').click(function() {
-//   showFromImgur();
-//   console.log('I am sorry for being mean to Benton');
-// });
+//code taken from https://davidwalsh.name/convert-xml-json
+function xmlToJson(xml) {
+	// Create the return object
+	var obj = {};
+	if (xml.nodeType == 1) { // element
+		// do attributes
+		if (xml.attributes.length > 0) {
+		obj["@attributes"] = {};
+			for (var j = 0; j < xml.attributes.length; j++) {
+				var attribute = xml.attributes.item(j);
+				obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+			}
+		}
+	} else if (xml.nodeType == 3) { // text
+		obj = xml.nodeValue;
+	}
+  // do children
+	if (xml.hasChildNodes()) {
+		for(var i = 0; i < xml.childNodes.length; i++) {
+			var item = xml.childNodes.item(i);
+			var nodeName = item.nodeName;
+			if (typeof(obj[nodeName]) == "undefined") {
+				obj[nodeName] = xmlToJson(item);
+			} else {
+				if (typeof(obj[nodeName].push) == "undefined") {
+					var old = obj[nodeName];
+					obj[nodeName] = [];
+					obj[nodeName].push(old);
+				}
+				obj[nodeName].push(xmlToJson(item));
+			}
+		}
+	}
+	return obj;
+};
