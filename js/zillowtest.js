@@ -1,19 +1,15 @@
 var callZillowButton = document.getElementById('callZillowButton');
 
 callZillowButton.addEventListener('click', function(){
-  getZillowResults('1551 NW 195th St', 'shoreline', 'washington', 98177);
+  getZillowResults('1551 NW 195th St', 98177);
 });
 
-function getZillowResults(address, city, state, zip){
-  var returnedJson = makeZillowAjaxCall(address, city, state, zip, formatZillowResults);
-  console.log('inside getZillowResults');
-  console.log(returnedJson);
-  // var latLng = returnedJson;
-
+function getZillowResults(address, zip){
+  var returnedJson = makeZillowAjaxCall(address, zip, formatZillowResults);
 }
 
 function formatZillowResults(returnedJson){
-  console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
+  // console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
   var result = returnedJson['SearchResults:searchresults']['response']['results']['result'];
   initMap(result);
 }
@@ -37,11 +33,11 @@ function initMap(result) {
 
 
 //using a CORS proxy at https://crossorigin.me/
-function makeZillowAjaxCall(address, city, state, zip, callbackFunction){
+function makeZillowAjaxCall(address, zip, callbackFunction){
   var inputAddress = address;
   var formattedAddress = inputAddress.replace(/ /g, '-');
-  var zipCode = zip.toString();
-  var cityStateZip = city.toLowerCase() + '-' + state.toLowerCase() + '-' + zip;
+  // var zipCode = zip.toString();
+  var cityStateZip = zip.toString();
   var url = 'http://crossorigin.me/' + 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=' + formattedAddress + '&citystatezip=' + cityStateZip + '&rentzestimate=true';
   console.log(url);
 
