@@ -1,33 +1,32 @@
-function getStored(){
+function getStorage(){
 
-    address = localStorage.getItem("propertyDetails");
-    if (address == null || usersMonthlyRent == "null"){
-      localStorage.setItem("propertyDetails", address);
-    } else {
-      var getHistory= JSON.parse(address)}
-  }
+var x = localStorage.getItem('property0');
+console.log("we got an x: ", x);
+var y = JSON.parse(x);
+console.log("we got and y: ", y);
+console.log("retn is : ", y["rent"])    ;
+};
+
+var buttonToClick = document.getElementById('retrieveStorage');
+buttonToClick.addEventListener('click',getStorage);
 
 
-  var stored = document.getElementById("propertyDetails");
+
+
+
+
+// function getStored(){
+//     address = localStorage.getItem("propertyDetails");
+//     if (address == null || usersMonthlyRent == "null"){
+//       localStorage.setItem("propertyDetails", address);
+//     } else {
+//       var getHistory= JSON.parse(address)}
+//   }
+//
+//
+//   var stored = document.getElementById("propertyDetails");
 
   //  addEventListener("submit", displaypropertyDetails);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // var history = document.getElementById('submit');
 //
