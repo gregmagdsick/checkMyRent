@@ -28,4 +28,13 @@ body {
   width: 78%;
   border: 1px blue solid;
   display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.aboutUsPersonHolder{
+  width: 45%;
+}
+
+.aboutUsPersonPhoto{
+  width: 100%;
 }
