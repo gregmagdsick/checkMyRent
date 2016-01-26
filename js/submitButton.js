@@ -1,7 +1,13 @@
 var getRentForm = document.getElementById('propertyDetails');
 getRentForm.addEventListener('submit', handleFormSubmit);
-
 var counter = 0;
+window.addEventListener('load', initializeIndex)
+
+function initializeIndex(){
+  if (localStorage.getItem('counter')){
+    counter = localStorage.getItem('counter');
+  }
+}
 
 function Property(type, rent, sqFeet, beds, baths, street, zip) {
     this.type = type;
@@ -26,10 +32,13 @@ function handleFormSubmit(e) {
   var beds = document.getElementById('beds').value;
   var baths = document.getElementById('baths').value;
   var street = document.getElementById('street').value.toString();
+  var zip = document.getElementById('zip').value;
   console.log('street =' + street);
+  console.log(street);
   console.log(typeof(street));
   console.dir(street);
-  var zip = document.getElementById('zip').value;
+  localStorage.setItem('mostRecentStreet', street);
+  localStorage.setItem('mostRecentZip', zip);
 
   var objProperty = new Property(type, rent, sqFeet, beds, baths, street, zip);
   addPropertyToStorage(objProperty,counter);
@@ -77,8 +86,6 @@ function checkFormInput(getRentForm) {
   function storeZillowInLs(result) {
     localStorage.setItem('mostRecentLat', parseFloat(result['address']['latitude']['#text']));
     localStorage.setItem('mostRecentLong', parseFloat(result['address']['longitude']['#text']));
-    localStorage.setItem('mostRecentStreet', street);
-    localStorage.setItem('mostRecentZip', zip);
     localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
     localStorage.setItem('mostRecentCounter', counter - 1);
   }
