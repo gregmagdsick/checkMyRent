@@ -1,34 +1,33 @@
-// function getInputForm() {
-//  var s1 = location.search.substring(1, location.search.length).split('&'),
-//      r = {}, s2, i;
-//  for (i = 0; i < s1.length; i++) {
-//      s2 = s1[i].split('=');
-//      r[decodeURIComponent(s2[0]).toLowerCase()] = decodeURIComponent(s2[1]);
-//  }
-//  return r;
-// };
-//
-// var QueryString = getInputForm();
-//
-// var typeResidence = QueryString["residenceType"];
-// var monthlyRent = QueryString["rent"];
-// console.log(monthlyRent);
+var getRentForm = document.getElementById('propertyDetails');
+getRentForm.addEventListener('submit', handleFormSubmit);
 
-function getRequests() {
-    var s1 = location.search.substring(1, location.search.length).split('&'),
-        r = {}, s2, i;
-    for (i = 0; i < s1.length; i ++) {
-         s2 = s1[i].split('=');
-         r[decodeURIComponent(s2[0]).toLowerCase()] = decodeURIComponent(s2[1]);
-     }
-     return r;
-  };
-var QueryString = getRequests();
+var counter = 0;
 
+function Property(rent, sqFeet, beds, baths, street, zip) {
+    this.rent = rent;
+    this.sqFeet = sqFeet;
+    this.beds = beds;
+    this.baths = baths;
+    this.street = street;
+    this.zip = zip;
+}
 
-var rent = QueryString["rent"];
-var sqFeet = QueryString["sq-feet"];
-var beds = QueryString["beds"];
-var baths = QueryString["baths"];
-var street = QueryString["street"];
-var zip = QueryString["zip"];
+function handleFormSubmit(e) {
+  e.preventDefault();
+  var rent = document.getElementById('monthlyRent').value;
+  var sqFeet = document.getElementById('sq-feet').value;
+  var beds = document.getElementById('beds').value;
+  var baths = document.getElementById('baths').value;
+  var street = document.getElementById('street').value;
+  var zip = document.getElementById('zip').value;
+
+  var objProperty = new Property(rent, sqFeet, beds, baths, street, zip);
+  addPropertyToStorage(objProperty,counter);
+  console.log(counter);
+  counter++;
+}
+
+function addPropertyToStorage(objProperty, counter) {
+localStorage.setItem('property'+counter, JSON.stringify(objProperty));
+localStorage.setItem('counter', JSON.stringify(counter));
+}
