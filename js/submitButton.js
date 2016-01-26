@@ -34,8 +34,16 @@ function handleFormSubmit(e) {
 }
 
 function addPropertyToStorage(objProperty, counter) {
+
+  if(localStorage.getItem(counter)) {
+    var storedCounter =JSON.parse(localStorage.getItem('counter'));
+    counter++;
+    localStorage.setItem('counter', JSON.stringify(counter));
+  } else {
+    localStorage.setItem('counter', JSON.stringify(counter));
+  }
 localStorage.setItem('property'+counter, JSON.stringify(objProperty));
-localStorage.setItem('counter', JSON.stringify(counter));
+// localStorage.setItem('counter', JSON.stringify(counter));
 }
 
 function getStorage(){
