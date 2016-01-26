@@ -15,7 +15,24 @@ function getZillowResults(address, city, state, zip){
 function formatZillowResults(returnedJson){
   console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
   var result = returnedJson['SearchResults:searchresults']['response']['results']['result'];
+  initMap(result);
+}
 
+
+function initMap(result) {
+  // console.log(result['address']['latitude']['#text']);
+  var mapCenterLat = parseFloat(result['address']['latitude']['#text']);
+  var mapCenterLng = parseFloat(result['address']['longitude']['#text']);
+  var mapDiv = document.getElementById('map');
+  var map = new google.maps.Map(mapDiv, {
+    center:{lat: mapCenterLat, lng: mapCenterLng},
+    zoom: 15
+  });
+
+  var marker = new google.maps.Marker({
+    position: {lat: mapCenterLat, lng: mapCenterLng}
+  })
+  marker.setMap(map);
 }
 
 
