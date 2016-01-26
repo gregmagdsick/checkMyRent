@@ -42,8 +42,8 @@ localStorage.setItem('counter', JSON.stringify(counter));
 //address should contain only alphanumeric characters, used regular expression  http://www.the-art-of-web.com/javascript/validate/
 
 function checkFormInput(getRentForm) {
-  var address = document.getElementById('street').value;
-  if (address == "" || address == "Street address" ) {
+  var address = document.getElementById('street');
+  if (address.value == "" || address.value == "Street address" ) {
       alert('field cannot be empty!');
       address.focus();
       return false;
@@ -51,7 +51,7 @@ function checkFormInput(getRentForm) {
   //regular expression to match only alphanumeric characters and spaces
   var addressValidation = /^[\w ]+$/;
 
-  if(!addressValidation.test(address)) {
+  if(!addressValidation.test(address.value)) {
       alert('error: the address includes invalid characters');
       address.focus();
       return false;
