@@ -1,5 +1,7 @@
-var checkRentButton = document.getElementById('checkMyRent');
-checkRentButton.addEventListener('submit', handleFormSubmit);
+var getRentForm = document.getElementById('propertyDetails');
+getRentForm.addEventListener('submit', handleFormSubmit);
+
+var counter = 0;
 
 function Property(rent, sqFeet, beds, baths, street, zip) {
     this.rent = rent;
@@ -10,9 +12,8 @@ function Property(rent, sqFeet, beds, baths, street, zip) {
     this.zip = zip;
 }
 
-
-
-function handleFormSubmit() {
+function handleFormSubmit(e) {
+  e.preventDefault();
   var rent = document.getElementById('monthlyRent').value;
   var sqFeet = document.getElementById('sq-feet').value;
   var beds = document.getElementById('beds').value;
@@ -21,5 +22,12 @@ function handleFormSubmit() {
   var zip = document.getElementById('zip').value;
 
   var objProperty = new Property(rent, sqFeet, beds, baths, street, zip);
+  addPropertyToStorage(objProperty,counter);
+  console.log(counter);
+  counter++;
+}
 
+function addPropertyToStorage(objProperty, counter) {
+localStorage.setItem('property'+counter, JSON.stringify(objProperty));
+localStorage.setItem('counter', JSON.stringify(counter));
 }
