@@ -5,7 +5,6 @@
 function handleFormSubmit() {
     console.log('handleFormSubmit');
     var rent = document.getElementById('monthlyRent').value;
-    alert(rent);
     var sqFeet = document.getElementById('sq-feet').value;
     var beds = document.getElementById('beds').value;
     var baths = document.getElementById('baths').value;
