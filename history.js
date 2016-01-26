@@ -1,47 +1,77 @@
+function getStored(){
 
-var history = document.getElementById('submit');
-
-history.addEventListiner('click'), function(history){
-  getElementById('userAddress')
-  getElementById('userZip')
-  getElementById('userbeds')
-  getElementById('usersqFeet')
-  getElementById('userbaths')
-  getElementById('usersMonthlyRent')
-};
+    address = localStorage.getItem("propertyDetails");
+    if (address == null || usersMonthlyRent == "null"){
+      localStorage.setItem("propertyDetails", address);
+    } else {
+      var getHistory= JSON.parse(address)}
+  }
 
 
+  var stored = document.getElementById("propertyDetails");
 
-
-var address =[];
-var zip = [];
-var sqFeet = [];
-var beds = [];
-var baths = [];
-var monthlyRent = [];
+  //  addEventListener("submit", displaypropertyDetails);
 
 
 
-var addressInput  = document.getElementById("address");
-var zipInput   = document.getElementById("zip");
-var sqFeettInput = document.getElementById("sqFeet");
-var bedsInput  = document.getElementById("beds");
-var bathInput   = document.getElementById("bath");
-var monthlyRentInput = document.getElementById("monthlyRent");
 
 
-var messageBox  = document.getElementById("display");
 
-function insert ( ) {
- address.push( addressInput.value );
- zip.push( zipInput.value );
- sqFeet.push( sqFeet.value );
- beds.push( bedsInput.value );
- bath.push( bathInput.value );
- monthlyRent.push( monthlyRent.value );
 
- clearAndShow();
-}
+
+
+
+
+
+
+
+
+
+
+
+// var history = document.getElementById('submit');
+//
+// history.addEventListiner('click'), function(history){
+//   getElementById('userAddress')
+//   getElementById('userZip')
+//   getElementById('userbeds')
+//   getElementById('usersqFeet')
+//   getElementById('userbaths')
+//   getElementById('usersMonthlyRent')
+// };
+//
+//
+//
+//
+// var address =[];
+// var zip = [];
+// var sqFeet = [];
+// var beds = [];
+// var baths = [];
+// var monthlyRent = [];
+//
+//
+//
+// var addressInput  = document.getElementById("address");
+// var zipInput   = document.getElementById("zip");
+// var sqFeettInput = document.getElementById("sqFeet");
+// var bedsInput  = document.getElementById("beds");
+// var bathInput   = document.getElementById("bath");
+// var monthlyRentInput = document.getElementById("monthlyRent");
+//
+//
+// var messageBox  = document.getElementById("display");
+//
+// function insert ( ) {
+//  address.push( addressInput.value );
+//  zip.push( zipInput.value );
+//  sqFeet.push( sqFeet.value );
+//  beds.push( bedsInput.value );
+//  bath.push( bathInput.value );
+//  monthlyRent.push( monthlyRent.value );
+//
+//  clearAndShow();
+// }
 
 // function clearAndShow () {
 //   // Clear our fields
