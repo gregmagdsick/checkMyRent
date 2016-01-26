@@ -12,34 +12,13 @@ buttonToClick.addEventListener('click',getStorage);
 
 
 
-render: function() {
-    this.generateHistory();
-
-    var ulEl = document.createElement('ul');
-    ulEl.appendChild(document.createTextNode(x));
-    var sectionEl = document.getElementById('retrieveStorage').appendChild(ulEl);
-
-    // var liEl_two = document.createElement('li');
-    // liEl_two.textContent = 'Total: ' + this.dailyCookies;
-    // ulEl.appendChild(liEl_two);
-  }
-
-
-
-
-
-
-
-
-
-
 var para = document.createElement("p");
 var node = document.createTextNode("This is new.");
 para.appendChild(node);
 
 var element = document.getElementById("div1");
 var child = document.getElementById("p1");
-element.insertBefore(para,child);
+
 
 
 
