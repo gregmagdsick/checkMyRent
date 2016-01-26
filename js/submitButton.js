@@ -3,7 +3,8 @@ getRentForm.addEventListener('submit', handleFormSubmit);
 
 var counter = 0;
 
-function Property(rent, sqFeet, beds, baths, street, zip) {
+function Property(type, rent, sqFeet, beds, baths, street, zip) {
+    this.type = type;
     this.rent = rent;
     this.sqFeet = sqFeet;
     this.beds = beds;
@@ -14,6 +15,12 @@ function Property(rent, sqFeet, beds, baths, street, zip) {
 
 function handleFormSubmit(e) {
   e.preventDefault();
+
+  if(document.getElementById('apartment').checked) {
+     var type = 'apartment';
+   } else { var type = 'house';
+   }
+
   var rent = document.getElementById('monthlyRent').value;
   var sqFeet = document.getElementById('sq-feet').value;
   var beds = document.getElementById('beds').value;
@@ -21,7 +28,7 @@ function handleFormSubmit(e) {
   var street = document.getElementById('street').value;
   var zip = document.getElementById('zip').value;
 
-  var objProperty = new Property(rent, sqFeet, beds, baths, street, zip);
+  var objProperty = new Property(type, rent, sqFeet, beds, baths, street, zip);
   addPropertyToStorage(objProperty,counter);
   counter++;
 }
@@ -46,7 +53,7 @@ function checkFormInput(getRentForm) {
 
   if(!addressValidation.test(address)) {
       alert('error: the address includes invalid characters');
-      address.focus()
+      address.focus();
       return false;
   }
 
