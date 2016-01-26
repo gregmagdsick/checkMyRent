@@ -44,6 +44,7 @@ function handleFormSubmit(e) {
   addPropertyToStorage(objProperty,counter);
   counter++;
   getZillowResults(street, zip);
+  window.location.href = 'results.html';
 }
 
 function addPropertyToStorage(objProperty, counter) {
