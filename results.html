@@ -14,17 +14,17 @@
     </style>
   </head>
   <body>
-
-    <button id="callZillowButton"> Press to make an AJAX call to Zillow </button>
-    <nav>
-      <ul>
-        <li><a href="index.html"><img src="img/Feedbin-Icon-home-search.png" alt="New Search" class="navImg"></a></li>
-        <li><a href="history.html"><img src="img/history.png" alt="Search History" class="navImg"></a></li>
-        <li><a href="about_us.html"><img src="img/About us.png" alt="About Us" class="navImg"></a></li>
-      </ul>
+    <nav class="leftNavbar">
+      <a href="index.html"><div class="navBarImageHolder"><img src="img/Feedbin-Icon-home-search.png" alt="New Search" class="navImg"></div></a>
+      <a href="history.html"><div class="navBarImageHolder"><img src="img/historyTransparent.png" alt="Search History" class="navImg"></div></a>
+      <a href="about_us.html"><div class="navBarImageHolder"><img src="img/questionMark.png" alt="Search History" class="navImg"></div></a>
     </nav>
-    <div id="map" class="map"></div>
-    <script src="js/mapTest.js"></script>
-    <script type="text/javascript" src="js/zillowtest.js"></script>
+
+    <div class="invisibleSpacerDiv"></div>
+    <section class="mainContent">
+
+      <div id="map" class="map"></div>
+    </section>
+    <script type="text/javascript" src="js/displayResults.js"></script>
   </body>
 </html>
