@@ -28,7 +28,7 @@
                     <h2><span></span>Check my rent</h2>
                 </div>
 
-                <form id="propertyDetails" onsubmit="return checkFormInput(this)">
+                <form id="propertyDetails" onsubmit="return(checkFormInput(this) && checkZipCode(this))">
                       <div class="inline-group green">
                         <label class="radio-main">
                           <input type="radio" name="residenceType" class="input-radio" id="apartment" checked />Apartment
