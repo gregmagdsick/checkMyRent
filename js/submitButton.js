@@ -44,7 +44,7 @@ function handleFormSubmit(e) {
   addPropertyToStorage(objProperty,counter);
   counter++;
   getZillowResults(street, zip);
-  window.location.href = 'results.html';
+  // window.location.href = 'results.html';
 }
 
 function addPropertyToStorage(objProperty, counter) {
@@ -85,7 +85,9 @@ function checkFormInput(getRentForm) {
   }
 
   function storeZillowInLs(result) {
+    console.log(result);
     localStorage.setItem('mostRecentLat', parseFloat(result['address']['latitude']['#text']));
+    console.log(parseFloat(result['address']['latitude']['#text']));
     localStorage.setItem('mostRecentLng', parseFloat(result['address']['longitude']['#text']));
     localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
     localStorage.setItem('mostRecentCounter', counter - 1);
