@@ -60,11 +60,60 @@ function handleFormSubmit(e) {
     // buttonToClick.addEventListener('click',getStorage);
 
     //form input validation
+
+    function checkFormInput(getRentForm) {
+      var rent = document.getElementById('monthlyRent');
+      var sqFeet = document.getElementById('sq-feet');
+      var beds = document.getElementById('beds');
+      var baths = document.getElementById('baths');
+
+      if(isNaN(rent.value)) {
+          alert('Please input a numerical value for the monthly rent');
+          rent.focus();
+          return false;
+      }
+      if(isNaN(sqFeet.value)) {
+          alert('Please input a numerical value for the Sq feet');
+          sqFeet.focus();
+          return false;
+      }
+      if(isNaN(beds.value )) {
+          alert('Please input a numerical value for Beds');
+          beds.focus();
+          return false;
+      }
+      if(isNaN(baths.value)) {
+          alert('Please input a numerical value for Baths');
+          baths.focus();
+          return false;
+      }
+          return true;
+    }
+
     //address should contain only alphanumeric characters, used regular expression  http://www.the-art-of-web.com/javascript/validate/
+      function checkAddressInput(getRentForm) {
+        var address = document.getElementById('street');
+        if (address.value == "" || address.value == "Street address") {
+            alert('address cannot be empty!');
+            address.focus();
+            return false;
+        }
+
+        //regular expression to match only alphanumeric characters and spaces
+        var addressValidation = /^[\w ]+$/;
+
+        if(!addressValidation.test(address.value)) {
+            alert('error: the address includes invalid characters');
+            address.focus();
+            return false;
+        }
+        return true;
+      }
+
+    // zip code validation http://stackoverflow.com/questions/160550/zip-code-us-postal-code-validation
     function checkZipCode(getRentForm) {
-        console.log('test');
-      var zipCode = document.getElementById('zip');
-      if (zipCode.value == "" || zipCode.value == "Zip") {
+     var zipCode = document.getElementById('zip');
+      if (zipCode.value == "" || zipCode.value == "ZIP") {
           alert('Zip cannot be empty!');
           zipCode.focus();
           return false;
@@ -77,24 +126,4 @@ function handleFormSubmit(e) {
         return false;
       }
         return true;
-    }
-
-    function checkFormInput(getRentForm) {
-      var address = document.getElementById('street');
-      if (address.value == "" || address.value == "Street address") {
-          alert('address cannot be empty!');
-          address.focus();
-          return false;
-      }
-
-      //regular expression to match only alphanumeric characters and spaces
-      var addressValidation = /^[\w ]+$/;
-
-      if(!addressValidation.test(address.value)) {
-          alert('error: the address includes invalid characters');
-          address.focus();
-          return false;
-      }
-
-      return true;
     }
