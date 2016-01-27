@@ -9,7 +9,7 @@
     <!--Favicon to be chosen later -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styleIndex.css">
-    <link rel="stylesheet" href="css/styleForm.css">
+    <!-- <link rel="stylesheet" href="css/styleForm.css"> -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
@@ -20,15 +20,15 @@
 </section>
     <div class="main">
         <div class="login-head">
-            <h1></h1>
+            <h1>Welcome to Check My Rent</h1>
         </div>
-        <div class="wrap">
+        <!-- <div class="wrap">
             <div class="Regisration">
                 <div class="Regisration-head">
                     <h2><span></span>Check my rent</h2>
-                </div>
+                </div> -->
 
-                 <form id="propertyDetails" onsubmit="return checkFormInput(this)">
+                <form id="propertyDetails" onsubmit="return(checkFormInput(this) && checkAddressInput(this) && checkZipCode(this))">
                       <div class="inline-group green">
                         <label class="radio-main">
                           <input type="radio" name="residenceType" class="input-radio" id="apartment" checked />Apartment
@@ -41,19 +41,15 @@
                     <input type="text" name="beds" id="beds" value="Beds" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Beds';}" >
                     <input type="text" name = "baths" id="baths" value="Baths" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Baths';}">
                     <input type="text" name="street" id="street" value="Sreet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Street address';}">
-                    <input type="text" name="zip" id="zip" value=" Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' ZIP';}">
+                    <input type="text" name="zip" id="zip" value="Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ZIP';}">
+
                     <div class="Remember-me">
-                        <!-- <div class="p-container">
-                            <label class="checkbox">
-                                <input type="checkbox" name="checkbox" checked="checked"><i></i>I agree to the Terms and Conditions</label>
-                            <div class="clear"></div>
-                        </div> -->
+
                         <div class="submit">
                             <input type="submit" value="Check rent">
                         </div>
                         <div class="clear"> </div>
                     </div>
-
                 </form>
             </div><!--end of registration
             <div class="copy-right">

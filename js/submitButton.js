@@ -54,25 +54,67 @@ function addPropertyToStorage(objProperty, counter) {
 
 //form input validation
 //address should contain only alphanumeric characters, used regular expression  http://www.the-art-of-web.com/javascript/validate/
+    function checkFormInput(getRentForm) {
+      var rent = document.getElementById('monthlyRent');
+      var sqFeet = document.getElementById('sq-feet');
+      var beds = document.getElementById('beds');
+      var baths = document.getElementById('baths');
 
-function checkFormInput(getRentForm) {
-  var address = document.getElementById('street');
-  if (address.value == "" || address.value == "Street address" ) {
-      alert('field cannot be empty!');
-      address.focus();
-      return false;
-  }
-  //regular expression to match only alphanumeric characters and spaces
-  var addressValidation = /^[\w ]+$/;
+        if(isNaN(rent.value)) {
+            rent.value = "Please input a numeric value";
+            return false;
+          }
 
-  if(!addressValidation.test(address.value)) {
-      alert('error: the address includes invalid characters');
-      address.focus();
-      return false;
-  }
+        if(sqFeet.value != "Sq Feet" && isNaN(sqFeet.value )) {
+            sqFeet.value = "Please input a numeric value";
+            return false;
+        }
 
-  return true;
-}
+        if(beds.value != "Beds" && isNaN(beds.value )) {
+            beds.value = "Please input a numeric value";
+            return false;
+        }
+
+        if(baths.value != "Baths" && isNaN(baths.value)) {
+            baths.value = "Please input a numeric value";
+            return false;
+        }
+            return true;
+    }
+
+    //address should contain only alphanumeric characters, used regular expression  http://www.the-art-of-web.com/javascript/validate/
+      function checkAddressInput(getRentForm) {
+        var address = document.getElementById('street');
+        if (address.value == "" || address.value == "Street address") {
+            address.value = "address cannot be empty!";
+            return false;
+        }
+
+        //regular expression to match only alphanumeric characters, commas, dash and space
+        var addressValidation = /^[\w,\-\s]+$/;
+
+        if(!addressValidation.test(address.value)) {
+            address.value = "error: invalid address";
+            return false;
+        }
+        return true;
+      }
+
+    // zip code validation http://stackoverflow.com/questions/160550/zip-code-us-postal-code-validation
+    function checkZipCode(getRentForm) {
+     var zipCode = document.getElementById('zip');
+       if (zipCode.value == "" || zipCode.value == "ZIP") {
+        zipCode.value = "Zip cannot be empty!";
+        return false;
+      }
+      var zipValidation = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
+
+      if(!zipValidation.test(zipCode.value)) {
+        zipCode.value = 'error: invalid zip code';
+        return false;
+      }
+        return true;
+    }
 
   function formatZillowResults(returnedJson){
     console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
