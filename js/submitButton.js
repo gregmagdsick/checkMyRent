@@ -43,7 +43,7 @@ function handleFormSubmit(e) {
   var objProperty = new Property(type, rent, sqFeet, beds, baths, street, zip);
   addPropertyToStorage(objProperty,counter);
   counter++;
-  makeZillowAjaxCall(street, zip, formatZillowResults)
+  makeZillowAjaxCall(street, zip, formatZillowResults);
 
 }
 
