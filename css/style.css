@@ -72,6 +72,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
 }
 
 .resultsHolder{
@@ -81,6 +82,7 @@ body {
   align-items: center;
   margin-bottom: 2%;
   margin-top:
+  width: 80%;
 }
 
 .resultsTextHolderEl{
@@ -108,8 +110,24 @@ body {
 
 .zillowLogo {
   margin-top: 2%;
+  display: inline-flex;
 }
 
 .zillowBrandingLinkPara > a {
   color: #E2E3DF;
+  margin: 5px;
+}
+
+.zillowBrandingHolder{
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  align-content: center;
+  justify-content: center;
+}
+
+.map{
+  width: 90%;
+  min-width: 300px;
+  min-height: 300px;
 }
