@@ -56,22 +56,23 @@ function handleFormSubmit(e) {
       var baths = document.getElementById('baths');
 
       if(isNaN(rent.value)) {
-          rent.value = 'Please input a numerical value';
+          rent.value = "Please input a numeric value";
+          // alert('heiiii');
           rent.focus();
           return false;
       }
       if(isNaN(sqFeet.value)) {
-          sqFeet.value = 'Please input a numerical value';
+          sqFeet.value = "Please input a numeric value";
           sqFeet.focus();
           return false;
       }
       if(isNaN(beds.value )) {
-          beds.value = 'Please input a numerical value';
+          beds.value = "Please input a numeric value";
           beds.focus();
           return false;
       }
       if(isNaN(baths.value)) {
-          baths.value = 'Please input a numerical value';
+          baths.value = "Please input a numeric value";
           baths.focus();
           return false;
       }
@@ -82,7 +83,7 @@ function handleFormSubmit(e) {
       function checkAddressInput(getRentForm) {
         var address = document.getElementById('street');
         if (address.value == "" || address.value == "Street address") {
-            address.value = 'address cannot be empty!';
+            address.value = "address cannot be empty!";
             address.focus();
             return false;
         }
@@ -91,7 +92,7 @@ function handleFormSubmit(e) {
         var addressValidation = /^[\w ]+$/;
 
         if(!addressValidation.test(address.value)) {
-            address.value = 'error: the address includes invalid characters';
+            address.value = "error: the address includes invalid characters";
             address.focus();
             return false;
         }
@@ -102,7 +103,7 @@ function handleFormSubmit(e) {
     function checkZipCode(getRentForm) {
      var zipCode = document.getElementById('zip');
       if (zipCode.value == "" || zipCode.value == "ZIP") {
-          zipCode.value = 'Zip cannot be empty!';
+          zipCode.value = "Zip cannot be empty!";
           zipCode.focus();
           return false;
       }
