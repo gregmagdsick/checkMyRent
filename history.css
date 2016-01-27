@@ -1,0 +1,21 @@
+
+.historyPageTitle{
+  border: 1px black solid;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  margin-bottom: 5%;
+}
+
+.historyHolderDiv{
+  border: 1px black solid;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+  margin-bottom: 1%;
+}
+
+.mainContent{
+  display: flex;
+  flex-direction: column;
+}

@@ -3,37 +3,27 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="history.css">
     <title>Search History</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styleIndex.css">
+    <!-- <link rel="stylesheet" href="css/styleIndex.css"> -->
     <link rel="stylesheet" href="css/styleForm.css">
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="index.html"><img src="img/Feedbin-Icon-home-search.png" alt="New Search" class="navImg"></a></li>
-        <li><a href="about_us.html"><img src="img/About us.png" alt="About Us" class="navImg"></a></li>
-      </ul>
+    <nav class="leftNavbar">
+      <a href="index.html"><div class="navBarImageHolder"><img src="img/Feedbin-Icon-home-search.png" alt="New Search" class="navImg"></div></a>
+      <a href="history.html"><div class="navBarImageHolder"><img src="img/historyTransparent.png" alt="Search History" class="navImg"></div></a>
+      <a href="about_us.html"><div class="navBarImageHolder"><img src="img/questionMark.png" alt="Search History" class="navImg"></div></a>
     </nav>
-    <h3>Search History</h3>
-      <div id="propertiesList">
-        </div>
 
-  <!-- <div id="userAddress">  </div>
-  <div id="userZip">  </div>
-  <div id="usersqFeet">  </div>
-  <div id="userbeds">  </div>
-  <div id="userbaths">  </div>
-  <div id="usersMonthlyRent">  </div> -->
+    <div class="invisibleSpacerDiv"></div>
+    <section class="mainContent" id="mainContent">
+      <div class="historyPageTitle">
+        <h3>Search History</h3>
+      </div>
+      <!-- <div id="propertiesList"> -->
+      <!-- </div> -->
+    </section>
 
-  <!-- <script>
-    localStorage.setItem("userAddress",[]);
-    localStorage.setItem("userZip",[]);
-    localStorage.setItem("userbeds",[]);
-    localStorage.setItem("userbaths",[]);
-    localStorage.setItem("usersqFeet",[]);
-    localStorage.setItem("usersMonthlyRent",[]);
-  </script> -->
       <script src="history.js"></script>
   </body>
 </html>
