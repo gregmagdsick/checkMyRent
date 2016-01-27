@@ -23,12 +23,12 @@ window.addEventListener('load', function(){
   var mostRecentPropertyLink = localStorage.getItem('mostRecentPropertyLink');
   var mostRecentStreet = mostRecentProperty['street'] //why are we storing mostRecentStreet in localstorage in addition to the street stored in property?
   console.log('property' + mostRecentCounter);
-  console.dir(mostRecentProperty)
   console.log(mostRecentRent);
   console.log(mostRecentRentEstimate);
   var arrowImg = compareRentAndEstimate(mostRecentRent, mostRecentRentEstimate, mostRecentPropertyLink, mostRecentStreet);
   mostRecentProperty['arrowImg'] = arrowImg;
   localStorage.setItem('property' + mostRecentCounter, JSON.stringify(mostRecentProperty));
+  console.dir(mostRecentProperty);
   console.log(currentLat);
   console.log(currentLng);
   initMap(currentLat, currentLng);
