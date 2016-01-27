@@ -43,13 +43,14 @@ function handleFormSubmit(e) {
   var objProperty = new Property(type, rent, sqFeet, beds, baths, street, zip);
   addPropertyToStorage(objProperty,counter);
   counter++;
-  getZillowResults(street, zip);
-  // window.location.href = 'results.html';
+
+  makeZillowAjaxCall(street, zip, formatZillowResults)
+
 }
 
 function addPropertyToStorage(objProperty, counter) {
-localStorage.setItem('property'+counter, JSON.stringify(objProperty));
-localStorage.setItem('counter', JSON.stringify(counter));
+  localStorage.setItem('property'+counter, JSON.stringify(objProperty));
+  localStorage.setItem('counter', JSON.stringify(counter));
 }
 
 //form input validation
@@ -74,10 +75,6 @@ function checkFormInput(getRentForm) {
   return true;
 }
 
-  function getZillowResults(address, zip){
-    var returnedJson = makeZillowAjaxCall(address, zip, formatZillowResults);
-  }
-
   function formatZillowResults(returnedJson){
     console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
     var result = returnedJson['SearchResults:searchresults']['response']['results']['result'];
@@ -91,6 +88,7 @@ function checkFormInput(getRentForm) {
     localStorage.setItem('mostRecentLng', parseFloat(result['address']['longitude']['#text']));
     localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
     localStorage.setItem('mostRecentCounter', counter - 1);
+    window.location.href = 'results.html';
   }
   //using a CORS proxy at https://crossorigin.me/
   function makeZillowAjaxCall(address, zip, callbackFunction){
