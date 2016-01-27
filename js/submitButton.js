@@ -43,6 +43,7 @@ function handleFormSubmit(e) {
   var objProperty = new Property(type, rent, sqFeet, beds, baths, street, zip);
   addPropertyToStorage(objProperty,counter);
   counter++;
+
   makeZillowAjaxCall(street, zip, formatZillowResults)
 
 }
@@ -81,7 +82,9 @@ function checkFormInput(getRentForm) {
   }
 
   function storeZillowInLs(result) {
+    console.log(result);
     localStorage.setItem('mostRecentLat', parseFloat(result['address']['latitude']['#text']));
+    console.log(parseFloat(result['address']['latitude']['#text']));
     localStorage.setItem('mostRecentLng', parseFloat(result['address']['longitude']['#text']));
     localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
     localStorage.setItem('mostRecentCounter', counter - 1);
