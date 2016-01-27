@@ -1,21 +1,30 @@
 
 .historyPageTitle{
+  background-color: rgb(48, 52, 60);
+  color: #E2E3DF;
   border: 1px black solid;
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  margin-bottom: 5%;
+  margin-bottom: 4%;
 }
 
 .historyHolderDiv{
+  background-color: rgb(48,48,48);
+  color: #E2E3DF;
+  align-self: center;
+  max-width: 900px;
+  width: 850px;
   border: 1px black solid;
   justify-content: center;
   align-items: center;
   display: inline-flex;
-  margin-bottom: 1%;
+  margin-bottom: 2%;
 }
 
 .mainContent{
+  background-color: rgb(48, 52, 60);
+  color: #E2E3DF;
   display: flex;
   flex-direction: column;
 }
