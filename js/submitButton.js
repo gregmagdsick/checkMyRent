@@ -46,18 +46,6 @@ function handleFormSubmit(e) {
     localStorage.setItem('property'+counter, JSON.stringify(objProperty));
     }
 
-    //experimenting with retrieving data from local storage
-    // function getStorage(){
-    //
-    //  var x = localStorage.getItem('property0');
-    //  console.log("we got an x: ", x);
-    //  var y = JSON.parse(x);
-    //  console.log("we got and y: ", y);
-    //  console.log("retn is : ", y["rent"])    ;
-    // };
-    //
-    // var buttonToClick = document.getElementById('retrieveStorage');
-    // buttonToClick.addEventListener('click',getStorage);
 
     //form input validation
 
@@ -68,23 +56,22 @@ function handleFormSubmit(e) {
       var baths = document.getElementById('baths');
 
       if(isNaN(rent.value)) {
-          // rent.value.innerHTML = 'Please input a numerical value for the monthly rent';
-          alert('Please input a numerical value for the monthly rent');
+          rent.value = 'Please input a numerical value';
           rent.focus();
           return false;
       }
       if(isNaN(sqFeet.value)) {
-          alert('Please input a numerical value for the Sq feet');
+          sqFeet.value = 'Please input a numerical value';
           sqFeet.focus();
           return false;
       }
       if(isNaN(beds.value )) {
-          alert('Please input a numerical value for Beds');
+          beds.value = 'Please input a numerical value';
           beds.focus();
           return false;
       }
       if(isNaN(baths.value)) {
-          alert('Please input a numerical value for Baths');
+          baths.value = 'Please input a numerical value';
           baths.focus();
           return false;
       }
@@ -95,7 +82,7 @@ function handleFormSubmit(e) {
       function checkAddressInput(getRentForm) {
         var address = document.getElementById('street');
         if (address.value == "" || address.value == "Street address") {
-            alert('address cannot be empty!');
+            address.value = 'address cannot be empty!';
             address.focus();
             return false;
         }
@@ -104,7 +91,7 @@ function handleFormSubmit(e) {
         var addressValidation = /^[\w ]+$/;
 
         if(!addressValidation.test(address.value)) {
-            alert('error: the address includes invalid characters');
+            address.value = 'error: the address includes invalid characters';
             address.focus();
             return false;
         }
@@ -115,7 +102,7 @@ function handleFormSubmit(e) {
     function checkZipCode(getRentForm) {
      var zipCode = document.getElementById('zip');
       if (zipCode.value == "" || zipCode.value == "ZIP") {
-          alert('Zip cannot be empty!');
+          zipCode.value = 'Zip cannot be empty!';
           zipCode.focus();
           return false;
       }
