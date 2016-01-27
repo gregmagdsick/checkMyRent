@@ -1,3 +1,18 @@
+//add a method to be able to get element's widths
+// Element.prototype.getElementWidth = function() {
+//   if (typeof this.clip !== 'undefined') {
+//     return this.clip.width;
+//   } else {
+//     if (this.style.pixelWidth) {
+//       return this.style.pixelWidth;
+//     } else {
+//       return this.offsetWidth;
+//     }
+//   }
+// };
+
+
+//on page load
 window.addEventListener('load', function(){
   var currentLat = Number(localStorage.getItem('mostRecentLat'));
   var currentLng = Number(localStorage.getItem('mostRecentLng'));
@@ -18,6 +33,8 @@ window.addEventListener('load', function(){
 })
 
 function initMap(currentLat, currentLng) {
+  var mainContent = document.getElementById('mainContent');
+  // var mainContentWidth = mainContent.getElementWidth();
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
     center: new google.maps.LatLng(currentLat, currentLng),
@@ -73,3 +90,6 @@ function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
   resultsTextHolderEl.appendChild(resultsHeaderEl);
   resultsTextHolderEl.appendChild(rentComparisonEl);
 }
+
+
+// window.addEventListener('resize', )
