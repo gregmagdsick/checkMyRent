@@ -1,24 +1,25 @@
-function getStorage(){
 
-var x = localStorage.getItem('property0');
-console.log("we got an x: ", x);
-var y = JSON.parse(x);
-console.log("we got and y: ", y);
-console.log("retn is : ", y["rent"])    ;
-};
+window.addEventListener('load', function(){
+  var counter = Number(localStorage.getItem('counter'));
+  var propertyArray = [];
+  for (var i = 0; i < counter; i++) {
+    propertyArray[i] = JSON.parse(localStorage.getItem('property' + i));
+  }
+  //var firstProperty = JSON.parse(localStorage.getItem('property0'));
+  var storage = document.getElementById('propertiesList');
 
-var buttonToClick = document.getElementById('retrieveStorage');
-buttonToClick.addEventListener('click',getStorage);
+  var ulEl = document.createElement('ul');
 
+for (var i = counter; i > 0; i--) {
+  var liEl = document.createElement('li');
+  liEl.innerHTML = propertyArray[i].street + ' $' + propertyArray[i].rent + '/mo'
+  ulEl.appendChild(liEl);
+}
+  //liEl.innerHTML = firstProperty.street + '     $' + firstProperty.rent + '/mo'
+  storage.appendChild(ulEl);
 
-
-var para = document.createElement("p");
-var node = document.createTextNode("This is new.");
-para.appendChild(node);
-
-var element = document.getElementById("div1");
-var child = document.getElementById("p1");
-
+  //console.log("we got an firstProperty: ", firstProperty);
+})
 
 
 

@@ -9,65 +9,22 @@
     <link rel="stylesheet" href="css/styleForm.css">
   </head>
   <body>
-  </section>
-      <div class="main">
-          <div class="login-head">
-              <h1></h1>
-          </div>
-          <div class="wrap">
-              <div class="Regisration">
-                  <div class="Regisration-head">
-                      <h2><span></span>Check my rent</h2>
-                  </div>
-                        <div class="inline-group green">
-                          <label class="radio-main">
-                            <input type="radio" name="residenceType" class="input-radio" />Apartment
-                          </label>
-                          <label class="radio-main">
-                            <input type="radio" name="residenceType" class="input-radio" />House
-                        </div>
-                      <input type="text" name="rent" value="Monthly Rent" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Monthly Rent';}" >
-                      <input type="text" name = "sq-feet" value="Sq feet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Sq Feet';}" >
-                      <input type="text" name="beds" value="Beds" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Beds';}" >
-                      <input type="text" name = "baths" value="Baths" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Baths';}">
-                      <input type="text" name="street" value="Sreet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Street address';}">
-                      <input type="text" name="zip" value=" Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = ' ZIP';}">
-                      <div class="Remember-me">
-                          <div class="submit">
-                              <input type="submit" value="Check rent" id="checkMyRent">
-                          </div>
-                          <div class="clear"> </div>
-                      </div>
-
-                  </form>
-              </div>
-              <div class="copy-right">
-              </div>
-          </div>
-        </div>
-          <footer class="footer">
-              <ul class="nav">
-                  <li><a href="#">About us</a>
-                  </li>
-                  <li><a href="#">History</a>
-                  </li>
-              </ul>
-          </footer>
     <nav>
       <ul>
         <li><a href="index.html"><img src="img/Feedbin-Icon-home-search.png" alt="New Search" class="navImg"></a></li>
         <li><a href="about_us.html"><img src="img/About us.png" alt="About Us" class="navImg"></a></li>
       </ul>
     </nav>
+    <h3>Search History</h3>
+      <div id="propertiesList">
+        </div>
 
-        <button type="button" name="button" id ='retrieveStorage' onclick= "getStorage();"></button>
-
-  <div id="userAddress">  </div>
+  <!-- <div id="userAddress">  </div>
   <div id="userZip">  </div>
   <div id="usersqFeet">  </div>
   <div id="userbeds">  </div>
   <div id="userbaths">  </div>
-  <div id="usersMonthlyRent">  </div>
+  <div id="usersMonthlyRent">  </div> -->
 
   <!-- <script>
     localStorage.setItem("userAddress",[]);
