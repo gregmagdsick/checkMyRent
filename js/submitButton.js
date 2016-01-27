@@ -1,8 +1,14 @@
 var getRentForm = document.getElementById('propertyDetails');
 getRentForm.addEventListener('submit', handleFormSubmit);
-​
 var counter = 0;
-​
+window.addEventListener('load', initializeIndex)
+
+function initializeIndex(){
+  if (localStorage.getItem('counter')){
+    counter = Number(localStorage.getItem('counter'));
+  }
+}
+
 function Property(type, rent, sqFeet, beds, baths, street, zip) {
     this.type = type;
     this.rent = rent;
@@ -12,38 +18,43 @@ function Property(type, rent, sqFeet, beds, baths, street, zip) {
     this.street = street;
     this.zip = zip;
 }
-​
+
 function handleFormSubmit(e) {
   e.preventDefault();
-​
+
   if(document.getElementById('apartment').checked) {
      var type = 'apartment';
    } else { var type = 'house';
    }
-​
+
   var rent = document.getElementById('monthlyRent').value;
   var sqFeet = document.getElementById('sq-feet').value;
   var beds = document.getElementById('beds').value;
   var baths = document.getElementById('baths').value;
-  var street = document.getElementById('street').value;
+  var street = document.getElementById('street').value.toString();
   var zip = document.getElementById('zip').value;
-​
+  console.log('street =' + street);
+  console.log(street);
+  console.log(typeof(street));
+  console.dir(street);
+  localStorage.setItem('mostRecentStreet', street);
+  localStorage.setItem('mostRecentZip', zip);
+
   var objProperty = new Property(type, rent, sqFeet, beds, baths, street, zip);
   addPropertyToStorage(objProperty,counter);
   counter++;
-
   makeZillowAjaxCall(street, zip, formatZillowResults)
 
 }
-​
+
 function addPropertyToStorage(objProperty, counter) {
   localStorage.setItem('property'+counter, JSON.stringify(objProperty));
   localStorage.setItem('counter', JSON.stringify(counter));
 }
-​
+
 //form input validation
 //address should contain only alphanumeric characters, used regular expression  http://www.the-art-of-web.com/javascript/validate/
-​
+
 function checkFormInput(getRentForm) {
   var address = document.getElementById('street');
   if (address.value == "" || address.value == "Street address" ) {
@@ -53,16 +64,15 @@ function checkFormInput(getRentForm) {
   }
   //regular expression to match only alphanumeric characters and spaces
   var addressValidation = /^[\w ]+$/;
-​
+
   if(!addressValidation.test(address.value)) {
       alert('error: the address includes invalid characters');
       address.focus();
       return false;
   }
-​
+
   return true;
 }
-
 
   function formatZillowResults(returnedJson){
     console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
@@ -71,9 +81,7 @@ function checkFormInput(getRentForm) {
   }
 
   function storeZillowInLs(result) {
-    console.log(result);
     localStorage.setItem('mostRecentLat', parseFloat(result['address']['latitude']['#text']));
-    console.log(parseFloat(result['address']['latitude']['#text']));
     localStorage.setItem('mostRecentLng', parseFloat(result['address']['longitude']['#text']));
     localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
     localStorage.setItem('mostRecentCounter', counter - 1);
