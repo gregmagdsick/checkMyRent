@@ -68,6 +68,7 @@ function handleFormSubmit(e) {
       var baths = document.getElementById('baths');
 
       if(isNaN(rent.value)) {
+          // rent.value.innerHTML = 'Please input a numerical value for the monthly rent';
           alert('Please input a numerical value for the monthly rent');
           rent.focus();
           return false;
