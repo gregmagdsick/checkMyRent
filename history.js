@@ -2,16 +2,18 @@
 window.addEventListener('load', function(){
   var counter = Number(localStorage.getItem('counter'));
   var propertyArray = [];
-  for (var i = 0; i < counter; i++) {
+  for (var i = 0; i < counter + 1; i++) {
     propertyArray[i] = JSON.parse(localStorage.getItem('property' + i));
+    console.log(propertyArray[i]);
   }
   //var firstProperty = JSON.parse(localStorage.getItem('property0'));
   var storage = document.getElementById('propertiesList');
 
   var ulEl = document.createElement('ul');
 
-for (var i = counter; i > 0; i--) {
+for (var i = counter; i > -1; i--) {
   var liEl = document.createElement('li');
+  console.log(propertyArray[i])
   liEl.innerHTML = propertyArray[i].street + ' $' + propertyArray[i].rent + '/mo'
   ulEl.appendChild(liEl);
 }
