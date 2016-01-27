@@ -8,6 +8,7 @@ General Layout
 }
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 /******************************
@@ -22,6 +23,18 @@ body {
   justify-content:center;
   align-items:center;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+}
+
+.header-container {
+  max-height: 10%;
+}
+
+.footer {
+  max-height: 10%;
+  align-self: flex-end;
 }
 
 /******************************
@@ -32,8 +45,8 @@ background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEE
 background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
 margin:auto;
 position:relative;
-width:550px;
-height:450px;
+width:600px;
+height:100%;
 font-family: Tahoma, Geneva, sans-serif;
 font-size: 14px;
 font-style: italic;
@@ -46,32 +59,46 @@ padding:10px;
 border: 1px solid #999;
 border: inset 1px solid #333;
 box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+margin: 10% 5%;
 }
 
 
-input{
+.form input{
     padding: 9px;
     border: solid 1px #d5d5d5;
     outline: 0;
     font: 13px Verdana, Tahoma, sans-serif;
-    width: 200px;
+    /*width: 250px;*/
     background: #FFFFFF;
     box-shadow: rgba(0,0,0, 0.1) 0px 0px 4px;
+    padding: 12px 12px;
+  	width:76%;
+  	border-top:1px solid #090B0D;
+  	border-right:2px solid #424549;
+  	border-bottom:2px solid #424549;
+  	border-left:1px solid #090B0D;
+  	margin: 10px 1em;
     }
-input:hover, input:focus{
+.form input:hover, .form input:focus{
     border-color: #b1b1b1;
     }
 
-input:focus {
+.form input:focus {
   box-shadow: rgba(0,0,0, 0.20) 0px 0px 8px;
 }
-.form label{
+/*.form label{
     font: 14px Verdana, Tahoma, sans-serif;
     margin-left: 10px;
     color: #555555;
     width: 80px;
     display: inline-block;
-    }
+    }*/
+.submit {
+   margin: auto;
+   border-radius: 10%;
+
+}
+
 .submit input{
     width: auto;
     padding: 9px 20px;
