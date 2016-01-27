@@ -5,22 +5,24 @@ window.addEventListener('load', function(){
   var mostRecentRentEstimate = Number(localStorage.getItem('mostRecentRentEstimate'));
   var mostRecentProperty = JSON.parse(localStorage.getItem('property' + mostRecentCounter));
   var mostRecentRent = Number(mostRecentProperty['rent']);
+  var mostRecentPropertyLink = localStorage.getItem('mostRecentPropertyLink');
+  var mostRecentStreet = mostRecentProperty['street'] //why are we storing mostRecentStreet in localstorage in addition to the street stored in property?
   console.log('property' + mostRecentCounter);
   console.dir(mostRecentProperty)
   console.log(mostRecentRent);
   console.log(mostRecentRentEstimate);
-  compareRentAndEstimate(mostRecentRent, mostRecentRentEstimate);
+  compareRentAndEstimate(mostRecentRent, mostRecentRentEstimate, mostRecentPropertyLink, mostRecentStreet);
   console.log(currentLat);
   console.log(currentLng);
   initMap(currentLat, currentLng);
 })
 
 function initMap(currentLat, currentLng) {
-  // console.log(result['address']['latitude']['#text']);
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
-    center:{lat: currentLat, lng: currentLng},
-    zoom: 15
+    center: new google.maps.LatLng(currentLat, currentLng),
+    zoom: 15,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
   });
 
   var marker = new google.maps.Marker({
@@ -29,7 +31,10 @@ function initMap(currentLat, currentLng) {
   marker.setMap(map);
 }
 
-function compareRentAndEstimate(rent, rentEstimate){
+function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
+  var zillowBrandingParaEl = document.getElementById('zillowBrandingLinkPara');
+  var propertyLink = 'http://www.zillow.com'; // this will need to be deleted once we are setting mostRecentPropertyLink from the zillow api call
+  zillowBrandingParaEl.innerHTML = '<a href="' + propertyLink +'"> See more details for ' + street + ' on Zillow</a>';
   var arrowArray = [['up-arrow.png', 'Your rent is too damn high!'], ['up_side_arrow.png', 'You are probably paying too much for rent.'], ['side-arrow.png', 'You are getting an average deal on rent.'], ['down_side_arrow.png', 'You are getting a pretty good deal on rent.'], ['down-arrow.png', 'Your rent is too damn low!']];
   var resultsHolderEl = document.getElementById('resultsHolder');
   var arrowImgEl = document.createElement('img');
@@ -40,7 +45,7 @@ function compareRentAndEstimate(rent, rentEstimate){
   resultsHeaderEl.className = 'resultsHeader';
   var rentComparisonEl = document.createElement('h5');
   rentComparisonEl.className = 'rentComparison';
-  rentComparisonEl.textContent = "Your rent: $" + rent + ", Zillow's estimated rent: $" + rentEstimate;
+  rentComparisonEl.innerHTML = "Your rent: $" + rent + ", Zillow's Rent Zestimate &#174 : $" + rentEstimate;
   if (rent > 0.95 * rentEstimate && rent < 1.05 * rentEstimate){
     //they are equal
     arrowImgEl.src = 'img/' + arrowArray[2][0];
