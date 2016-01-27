@@ -4,6 +4,7 @@
 }
 
 .navBarImageHolder{
+  flex-grow: 0;
   display: flex;
   width: 40px;
   border-radius: 5px;
@@ -39,8 +40,21 @@ body {
 
 }
 
+.zillowBrandingNavPara {
+  flex-grow: 0;
+  text-align: center;
+  font-size: 0.75em;
+  align-self: flex-end;
+  color: #E2E3DF;
+}
+
+.zillowBrandingNavPara > a {
+  color: inherit;
+}
+
 .invisibleSpacerDiv {
   width: 22%;
+  flex-grow: 1;
 }
 
 .mainContent{
@@ -94,4 +108,8 @@ body {
 
 .zillowLogo {
   margin-top: 2%;
+}
+
+.zillowBrandingLinkPara > a {
+  color: #E2E3DF;
 }
