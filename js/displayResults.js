@@ -26,7 +26,9 @@ window.addEventListener('load', function(){
   console.dir(mostRecentProperty)
   console.log(mostRecentRent);
   console.log(mostRecentRentEstimate);
-  compareRentAndEstimate(mostRecentRent, mostRecentRentEstimate, mostRecentPropertyLink, mostRecentStreet);
+  var arrowImg = compareRentAndEstimate(mostRecentRent, mostRecentRentEstimate, mostRecentPropertyLink, mostRecentStreet);
+  mostRecentProperty['arrowImg'] = arrowImg;
+  localStorage.setItem('property' + mostRecentCounter, JSON.stringify(mostRecentProperty));
   console.log(currentLat);
   console.log(currentLng);
   initMap(currentLat, currentLng);
@@ -49,6 +51,7 @@ function initMap(currentLat, currentLng) {
 }
 
 function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
+  var arrowImg;
   var zillowBrandingParaEl = document.getElementById('zillowBrandingLinkPara');
   zillowBrandingParaEl.innerHTML = '<a href="' + propertyLink +'"> See more details for ' + street + ' on Zillow</a>';
   var arrowArray = [['up-arrow.png', 'Your rent is too damn high!'], ['up_side_arrow.png', 'You are probably paying too much for rent.'], ['side-arrow.png', 'You are getting an average deal on rent.'], ['down_side_arrow.png', 'You are getting a pretty good deal on rent.'], ['down-arrow.png', 'Your rent is too damn low!']];
@@ -65,22 +68,27 @@ function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
   if (rent > 0.95 * rentEstimate && rent < 1.05 * rentEstimate){
     //they are equal
     arrowImgEl.src = 'img/' + arrowArray[2][0];
+    arrowImg = 'img/' + arrowArray[2][0];
     resultsHeaderEl.textContent = arrowArray[2][1];
   } else if ( rent > 1.15 * rentEstimate){
     //you are paying too much
     arrowImgEl.src = 'img/' + arrowArray[0][0];
+    arrowImg = 'img/' + arrowArray[0][0];
     resultsHeaderEl.textContent = arrowArray[0][1];
   } else if (rent < 0.85 * rentEstimate){
     //great deal
     arrowImgEl.src = 'img/' + arrowArray[4][0];
+    arrowImg = 'img/' + arrowArray[4][0];
     resultsHeaderEl.textContent = arrowArray[4][1];
   } else if (rent > 1.05 * rentEstimate){
     //paying a bit too much
     arrowImgEl.src = 'img/' + arrowArray[1][0];
+    arrowImg = 'img/' + arrowArray[1][0];
     resultsHeaderEl.textContent = arrowArray[1][1];
   } else if (rent < 0.95 * rentEstimate) {
     //getting a goodish deal
     arrowImgEl.src = 'img/' + arrowArray[3][0];
+    arrowImg = 'img/' + arrowArray[3][0];
     resultsHeaderEl.textContent = arrowArray[3][1];
   } else {
     alert('error!');
@@ -89,6 +97,8 @@ function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
   resultsHolderEl.appendChild(resultsTextHolderEl);
   resultsTextHolderEl.appendChild(resultsHeaderEl);
   resultsTextHolderEl.appendChild(rentComparisonEl);
+
+  return arrowImg;
 }
 
 
