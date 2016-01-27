@@ -36,7 +36,7 @@ function handleFormSubmit(e) {
     //ensures the counter is incremented and added to local storage
     function addPropertyToStorage(objProperty, counter) {
 
-      if(localStorage.getItem(counter)) {
+      if(localStorage.getItem('counter')) {
         var storedCounter =JSON.parse(localStorage.getItem('counter'));
         counter++;
         localStorage.setItem('counter', JSON.stringify(counter));
@@ -55,28 +55,26 @@ function handleFormSubmit(e) {
       var beds = document.getElementById('beds');
       var baths = document.getElementById('baths');
 
-      if(isNaN(rent.value)) {
-          rent.value = "Please input a numeric value";
-          // alert('heiiii');
-          rent.focus();
-          return false;
-      }
-      if(isNaN(sqFeet.value)) {
-          sqFeet.value = "Please input a numeric value";
-          sqFeet.focus();
-          return false;
-      }
-      if(isNaN(beds.value )) {
-          beds.value = "Please input a numeric value";
-          beds.focus();
-          return false;
-      }
-      if(isNaN(baths.value)) {
-          baths.value = "Please input a numeric value";
-          baths.focus();
-          return false;
-      }
-          return true;
+        if(isNaN(rent.value)) {
+            rent.value = "Please input a numeric value";
+            return false;
+          }
+
+        if(sqFeet.value != "Sq Feet" && isNaN(sqFeet.value )) {
+            sqFeet.value = "Please input a numeric value";
+            return false;
+        }
+
+        if(beds.value != "Beds" && isNaN(beds.value )) {
+            beds.value = "Please input a numeric value";
+            return false;
+        }
+
+        if(baths.value != "Baths" && isNaN(baths.value)) {
+            baths.value = "Please input a numeric value";
+            return false;
+        }
+            return true;
     }
 
     //address should contain only alphanumeric characters, used regular expression  http://www.the-art-of-web.com/javascript/validate/
@@ -84,16 +82,14 @@ function handleFormSubmit(e) {
         var address = document.getElementById('street');
         if (address.value == "" || address.value == "Street address") {
             address.value = "address cannot be empty!";
-            address.focus();
             return false;
         }
 
-        //regular expression to match only alphanumeric characters and spaces
-        var addressValidation = /^[\w ]+$/;
+        //regular expression to match only alphanumeric characters, commas, dash and space
+        var addressValidation = /^[\w,\-\s]+$/;
 
         if(!addressValidation.test(address.value)) {
-            address.value = "error: the address includes invalid characters";
-            address.focus();
+            address.value = "error: invalid address";
             return false;
         }
         return true;
@@ -102,16 +98,14 @@ function handleFormSubmit(e) {
     // zip code validation http://stackoverflow.com/questions/160550/zip-code-us-postal-code-validation
     function checkZipCode(getRentForm) {
      var zipCode = document.getElementById('zip');
-      if (zipCode.value == "" || zipCode.value == "ZIP") {
-          zipCode.value = "Zip cannot be empty!";
-          zipCode.focus();
-          return false;
+       if (zipCode.value == "" || zipCode.value == "ZIP") {
+        zipCode.value = "Zip cannot be empty!";
+        return false;
       }
       var zipValidation = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
 
       if(!zipValidation.test(zipCode.value)) {
-        alert('error: invalid zip code');
-        zipCode.focus();
+        zipCode.value = 'error: invalid zip code';
         return false;
       }
         return true;
