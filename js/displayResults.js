@@ -33,7 +33,6 @@ function initMap(currentLat, currentLng) {
 
 function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
   var zillowBrandingParaEl = document.getElementById('zillowBrandingLinkPara');
-  var propertyLink = 'http://www.zillow.com'; // this will need to be deleted once we are setting mostRecentPropertyLink from the zillow api call
   zillowBrandingParaEl.innerHTML = '<a href="' + propertyLink +'"> See more details for ' + street + ' on Zillow</a>';
   var arrowArray = [['up-arrow.png', 'Your rent is too damn high!'], ['up_side_arrow.png', 'You are probably paying too much for rent.'], ['side-arrow.png', 'You are getting an average deal on rent.'], ['down_side_arrow.png', 'You are getting a pretty good deal on rent.'], ['down-arrow.png', 'Your rent is too damn low!']];
   var resultsHolderEl = document.getElementById('resultsHolder');

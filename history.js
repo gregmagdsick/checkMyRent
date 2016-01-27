@@ -45,6 +45,7 @@ function storeZillowInLs(result, mostRecentCounter) {
   localStorage.setItem('mostRecentLat', parseFloat(result['address']['latitude']['#text']));
   localStorage.setItem('mostRecentLng', parseFloat(result['address']['longitude']['#text']));
   localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
+  localStorage.setItem('mostRecentPropertyLink', result['links']['homedetails']['#text']);
   localStorage.setItem('mostRecentCounter', mostRecentCounter);
   window.location.href = 'results.html';
 }
