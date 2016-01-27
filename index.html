@@ -13,53 +13,71 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 </head>
 <body>
-<section class="header-container">
-    <header class="header">
-        <h1 class="logo">Logo</h1>
-    </header>
-</section>
+    <section class="header-container">
+        <header class="header">
+            <h1 class="logo">Logo</h1>
+        </header>
+    </section>
     <div class="main">
-        <div class="login-head">
-            <h1>Welcome to Check My Rent</h1>
-        </div>
+        <article>
+            <!-- <h1>Welcome to Check My Rent</h1> -->
+        </article>
 
-                <form id="propertyDetails" onsubmit="return(checkFormInput(this) && checkAddressInput(this) && checkZipCode(this))">
-                      <div class="inline-group green">
-                        <label class="radio-main">
-                          <input type="radio" name="residenceType" class="input-radio" id="apartment" checked />Apartment
-                        </label>
-                        <label class="radio-main">
-                          <input type="radio" name="residenceType" class="input-radio" id="house"/>House</label>
-                      </div>
-                    <input type="text" name="rent" id="monthlyRent" value="Monthly Rent" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Monthly Rent';}" >
-                    <input type="text" name = "sq-feet" id="sq-feet" value="Sq feet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Sq Feet';}" >
-                    <input type="text" name="beds" id="beds" value="Beds" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Beds';}" >
+        <form class = "input-form" id="propertyDetails" onsubmit="return(checkFormInput(this) && checkAddressInput(this) && checkZipCode(this))">
+                <div class="inline-radio">
+                    <label class="radio-main">
+                    <input type="radio" name="residenceType" class="input-radio" id="apartment" checked />Apartment
+                    </label>
+                    <label class="radio-main">
+                    <input type="radio" name="residenceType" class="input-radio" id="house"/>House</label>
+                </div>
+                <div class="input-fields"
+
+                  <p class="rent">
+                    <!-- <label for="rent">Monthly Rent</label> -->
+                    <input type="text" name="rent" id="monthlyRent" value="Monthly Rent" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Monthly Rent';}">
+                  </p>
+                  <p class="sq-feet">
+                    <!-- <label for="sq-feet">Sq feet</label> -->
+                    <input type="text" name = "sq-feet" id="sq-feet" value="Sq feet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Sq Feet';}">
+                  </p>
+                  <p class="beds">
+                    <!-- <label for="beds">Beds</label> -->
+                    <input type="text" name="beds" id="beds" value="Beds" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Beds';}">
+                  </p>
+                  <p class="baths">
+                    <!-- <label for="baths">Baths</label> -->
                     <input type="text" name = "baths" id="baths" value="Baths" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Baths';}">
+                  </p>
+                  <p class="street">
+                    <!-- <label for="street">Address</label> -->
                     <input type="text" name="street" id="street" value="Sreet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Street address';}">
-                    <input type="text" name="zip" id="zip" value="Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ZIP';}">
+                  </p>
+                  <p class="zip">
+                    <!-- <label for="zip">ZIP</label> -->
+                    <input type="text" name="zip" id="zip" value="Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ZIP';}"></p>
+                </div>
 
-                    <div class="Remember-me">
+                <div class="submit">
+                    <input type="submit" value="Check rent">
+                </div>
+                <div class="clear"> </div>
 
-                        <div class="submit">
-                            <input type="submit" value="Check rent">
-                        </div>
-                        <div class="clear"> </div>
-                    </div>
                 </form>
-            </div><!--end of registration
-            <div class="zillow">
+
+                <div class="zillow">
                 <!-- <p> a href zillow</a>
                 </p> -->
-            </div>
-        </div><!--end of wrap-->
+                </div>
       </div><!--end of main-->
-        <footer class="footer">
-            <ul class="nav">
-                <li><a href="#">Results</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">About us</a></li>
-            </ul>
-        </footer>
-<script src="js/submitButton.js" type="text/javascript"></script>
+
+          <footer class="footer">
+              <ul class="nav">
+                  <li><a href="#">Results</a></li>
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">About us</a></li>
+              </ul>
+          </footer>
+        <script src="js/submitButton.js" type="text/javascript"></script>
     </body>
 </html>

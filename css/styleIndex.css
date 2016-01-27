@@ -13,7 +13,7 @@ html {
 /******************************
 Flexbox Layout
 *******************************/
-body, .header, .footer, .nav {
+body, .header-container, .header, .main, .footer, .nav {
   display: flex;
 }
 
@@ -23,6 +23,70 @@ body {
   align-items:center;
   min-height: 100vh;
 }
+
+/******************************
+Form Styling
+*******************************/
+form    {
+background: -webkit-gradient(linear, bottom, left 175px, from(#CCCCCC), to(#EEEEEE));
+background: -moz-linear-gradient(bottom, #CCCCCC, #EEEEEE 175px);
+margin:auto;
+position:relative;
+width:550px;
+height:450px;
+font-family: Tahoma, Geneva, sans-serif;
+font-size: 14px;
+font-style: italic;
+line-height: 24px;
+font-weight: bold;
+color: #09C;
+text-decoration: none;
+border-radius: 10px;
+padding:10px;
+border: 1px solid #999;
+border: inset 1px solid #333;
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+
+input{
+    padding: 9px;
+    border: solid 1px #d5d5d5;
+    outline: 0;
+    font: 13px Verdana, Tahoma, sans-serif;
+    width: 200px;
+    background: #FFFFFF;
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 4px;
+    }
+input:hover, input:focus{
+    border-color: #b1b1b1;
+    }
+
+input:focus {
+  box-shadow: rgba(0,0,0, 0.20) 0px 0px 8px;
+}
+.form label{
+    font: 14px Verdana, Tahoma, sans-serif;
+    margin-left: 10px;
+    color: #555555;
+    width: 80px;
+    display: inline-block;
+    }
+.submit input{
+    width: auto;
+    padding: 9px 20px;
+    background: #1695A3;
+    border: 0;
+    font-size: 14px;
+    color: #FFFFFF;
+    cursor: pointer;
+    }
+
+.submit input:hover{
+    background: #225378;
+    border-bottom: 3px solid #1695A3;
+    transition: all .1s;
+  }
 
 
 .footer {
