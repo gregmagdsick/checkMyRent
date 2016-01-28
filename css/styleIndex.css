@@ -2,6 +2,7 @@
 /******************************
 General Layout
 *******************************/
+@import url(http://fonts.googleapis.com/css?family=Bitter:400,700);
 
 body {
   background: url("../img/index-background.jpg") no-repeat fixed center /cover;
@@ -14,8 +15,17 @@ body {
 /******************************
 Flexbox Layout
 *******************************/
-.container-flex, .header-container, .header, .main, .footer, .nav, .input-fields {
+.container-flex, .header, .main, .footer, .nav, .input-fields {
   display: flex;
+}
+
+h1 {
+  /*margin: 50px auto;*/
+	text-align: center;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+	color: #fff;
+	opacity: 0.6;
+	font: 700 3em 'Bitter';
 }
 .layer {
   background-color: (243, 255, 226, 0.5);
@@ -34,7 +44,7 @@ Flexbox Layout
   flex-grow: 0;
 }
 
-.header-container {
+.header {
   flex-grow: 0;
   flex-direction: row;
   justify-content: flex-start;
@@ -60,8 +70,7 @@ Flexbox Layout
 .nav {
   align-items: center;
   width: 100%;
-  justify-content: space-around;
-
+  justify-content:space-around;
 }
 
 /******************************
@@ -88,7 +97,7 @@ padding:10px;
 border: 1px solid #999;
 border: inset 1px solid #333;
 box-shadow: 12px 12px 8px rgba(0,0,0,0.5);
-margin: 10% 5%;
+margin: 5% 5%;
 }
 
 .input-fields {
@@ -123,16 +132,9 @@ margin: 10% 5%;
 .input-fields input:focus {
   box-shadow: rgba(0,0,0, 0.20) 0px 0px 8px;
 }
-/*.form label{
-    font: 14px Verdana, Tahoma, sans-serif;
-    margin-left: 10px;
-    color: #555555;
-    width: 80px;
-    display: inline-block;
-    }*/
+
 .submit {
   align-self: center;
-  /*border: 1p solid #999;*/
 }
 
 .submit input{
@@ -140,35 +142,24 @@ margin: 10% 5%;
     height: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
-
-    background: linear-gradient(to bottom, #1e5799 0%,#2989d8 51%,#7db9e8 100%);
-    border: 0;
+    /*background: linear-gradient(to bottom, #1e5799 0%,#2989d8 51%,#7db9e8 100%);*/
+    background-color: rgba(136,131,143,0.5);
+    border: 1px solid rgb(54,10,112);
     font-size: 20px;
     font-weight: bold;
-    color: #FFFFFF;
+    color: #1F1F37;
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 15px;
-
-    /*style for button submit
-    padding: 19px 39px 18px 39px;
-    color: #FFF;
-    background-color: #4bc970;
-    font-size: 18px;
-    text-align: center;
-    font-style: normal;
-    border-radius: 5px;
-    width: 100%;
-    border: 1px solid #3ac162;
-    border-width: 1px 1px 3px;
-    box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
-    margin-bottom: 10px; */
-    }
+  }
 
 .submit input:hover{
-    background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
+    /*background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
     border-bottom: 3px solid #1695A3;
-    transition: all .1s;
+    */
+    background-color: rgba(74,77,101,0.8);
+    color: #fff;
+    transition: all .3s;
   }
 
 .inline-radio {
@@ -178,11 +169,36 @@ margin: 10% 5%;
   margin-bottom: 20px;
   margin-top: 2%;
 }
+#apartment {
+  margin-left: 70px;
+}
+#house {
+  margin-left: -150px;
+}
+input[type="radio"]:checked::before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D2665B;
+}
+
+/*input[type="radio"] {
+  width: 100%;
+  height: 1.5em;
+}*/
+
+/******************************
+Nav bar styling
+*******************************/
 
 .nav li {
   list-style-type: none;
   align-self: center;
-
 }
 
 .nav li a {
@@ -208,11 +224,5 @@ margin: 10% 5%;
 .header img {
   width: 100px;
   height: 100px;
+  margin-left: 15%;
 }
-/*p {
-    display: flex;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-}*/

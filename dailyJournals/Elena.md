@@ -27,3 +27,5 @@ Saturday, 01/23/16
 01/26/16
 * input validation for address implemented<br>
 * property type adds to local storage<br>
+
+*logo text on index created with http://cssdeck.com/labs/embossed-text-effect/

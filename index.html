@@ -8,7 +8,6 @@
       <link href='http://fonts.googleapis.com/css?family=Nunito:400,300'>
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/styleIndex.css">
-      <!-- <link rel="stylesheet" href="css/styleForm.css"> -->
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
    </head>
    <body>
@@ -16,7 +15,8 @@
          <div class="flex-container">
             <section class="header-container">
                <header class="header">
-                  <h1 class="logo"><img src="img/logo-house.png" alt="house logo">Check my rent</h1>
+                 <img src="img/logo-house.png" alt="house logo">
+                  <h1 class="logo">Check my rent</h1>
                </header>
             </section>
             <div class="main">
@@ -26,10 +26,10 @@
                <form class = "input-form" id="propertyDetails" onsubmit="return(checkFormInput(this) && checkAddressInput(this) && checkZipCode(this))">
                   <div class="inline-radio">
                      <label class="radio-main">
-                     <input type="radio" name="residenceType" class="input-radio" id="apartment" checked />Apartment
+                     <input type="radio" name="residenceType" class="input-radio" id="apartment" checked /><span>Apartment</span>
                      </label>
                      <label class="radio-main">
-                     <input type="radio" name="residenceType" class="input-radio" id="house"/>House</label>
+                     <input type="radio" name="residenceType" class="input-radio" id="house"/><span>House</span></label>
                   </div>
 
                   <div class="input-fields">
@@ -39,9 +39,9 @@
                      <input type="text" name = "baths" id="baths" value="Baths" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Baths';}"><br>
                      <input type="text" name="street" id="street" value="Street" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Street address';}"><br>
                      <input type="text" name="zip" id="zip" value="Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ZIP';}"><br>
+
                   <div class="submit">
                      <input type="submit" value="Check rent">
-                     <!-- <button type="submit" value="Check rent">Check rent</button> -->
                   </div>
             </div>
             </form>
