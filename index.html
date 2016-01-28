@@ -5,6 +5,7 @@
       <title>checkMyRent</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="icon" type="image/png" href="img/favicon.ico">
+      <link href='http://fonts.googleapis.com/css?family=Nunito:400,300'>
       <link rel="stylesheet" href="css/normalize.css">
       <link rel="stylesheet" href="css/styleIndex.css">
       <!-- <link rel="stylesheet" href="css/styleForm.css"> -->
@@ -15,7 +16,7 @@
          <div class="flex-container">
             <section class="header-container">
                <header class="header">
-                  <h1 class="logo"><img src="img/logo-house.png" alt="house favicon">Check my rent</h1>
+                  <h1 class="logo"><img src="img/logo-house.png" alt="house logo">Check my rent</h1>
                </header>
             </section>
             <div class="main">
@@ -30,35 +31,18 @@
                      <label class="radio-main">
                      <input type="radio" name="residenceType" class="input-radio" id="house"/>House</label>
                   </div>
+
                   <div class="input-fields">
-                  <!-- <p class="rent"> -->
-                     <!-- <label for="rent">Monthly Rent</label> -->
                      <input type="text" name="rent" id="monthlyRent" value="Monthly Rent" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Monthly Rent';}"><br>
-                  <!-- </p> -->
-                  <!-- <p class="sq-feet"> -->
-                     <!-- <label for="sq-feet">Sq feet</label> -->
                      <input type="text" name = "sq-feet" id="sq-feet" value="Sq feet" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Sq Feet';}"><br>
-                  <!-- </p> -->
-                  <!-- <p class="beds"> -->
-                     <!-- <label for="beds">Beds</label> -->
                      <input type="text" name="beds" id="beds" value="Beds" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Beds';}"><br>
-                  <!-- </p> -->
-                  <!-- <p class="baths"> -->
-                     <!-- <label for="baths">Baths</label> -->
                      <input type="text" name = "baths" id="baths" value="Baths" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Baths';}"><br>
-                  <!-- </p> -->
-                  <!-- <p class="street"> -->
-                     <!-- <label for="street">Address</label> -->
                      <input type="text" name="street" id="street" value="Street" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Street address';}"><br>
-                  <!-- </p> -->
-                  <!-- <p class="zip"> -->
-                     <!-- <label for="zip">ZIP</label> -->
                      <input type="text" name="zip" id="zip" value="Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ZIP';}"><br>
-                  <!-- </p> -->
                   <div class="submit">
                      <input type="submit" value="Check rent">
+                     <!-- <button type="submit" value="Check rent">Check rent</button> -->
                   </div>
-
             </div>
             </form>
             <div class="zillow">
