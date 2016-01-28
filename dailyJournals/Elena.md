@@ -27,3 +27,8 @@ Saturday, 01/23/16
 01/26/16
 * input validation for address implemented<br>
 * property type adds to local storage<br>
+
+01/28/16
+* on my own today
+* added the style for index.html, deleted the css for the older template form
+* moved history.js and history.css to their respective folders
