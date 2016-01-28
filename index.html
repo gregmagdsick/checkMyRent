@@ -20,9 +20,6 @@
                </header>
             </section>
             <div class="main">
-               <article>
-                  <!-- <h1>Welcome to Check My Rent</h1> -->
-               </article>
                <form class = "input-form" id="propertyDetails" onsubmit="return(checkFormInput(this) && checkAddressInput(this) && checkZipCode(this))">
                   <div class="inline-radio">
                      <label class="radio-main">
@@ -42,25 +39,18 @@
                      <input type="text" name="street" class="required" id="street" value="Street" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Street address';}"></label><br>
                      <label class="required">
                      <input type="text" name="zip" class="required" id="zip" value="Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'ZIP';}"></label><br>
-
                   <div class="submit">
                      <input type="submit" value="Check rent">
                   </div>
             </div>
             </form>
-            <div class="zillow">
-               <!-- <p> a href zillow</a>
-                  </p> -->
-            </div>
-         </div>
-         <!--end of main-->
-      </div>
-      <!--end of flex container-->
+         </div><!--end of main-->
+      </div><!--end of flex container-->
       <div class="clear"> </div>
       <footer class="footer">
          <ul class="nav">
-           <li><a href="history.html"><img src="img/historyTransparent.png" alt="History" class="navImg"></a></li>
-           <li><a href="about_us.html"><img src="img/About us.png" alt="About Us" class="navImg"></a></li>
+           <li><a class="texthover" href="history.html" title="History" style="background-color:#FFFFFF;color:#000000;text-decoration:none"><img src="img/historyTransparent.png" alt="History" class="navImg"></a></li>
+           <li><a class="texthover" href="about_us.html" title="About Us" style="background-color:#FFFFFF;color:#000000;text-decoration:none"><img src="img/About us.png" alt="About Us" class="navImg"></a></li>
          </ul>
       </footer>
       </div><!--end of layer-->

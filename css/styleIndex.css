@@ -20,7 +20,6 @@ Flexbox Layout
 }
 
 h1 {
-  /*margin: 50px auto;*/
 	text-align: center;
 	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
 	color: #fff;
@@ -37,7 +36,6 @@ h1 {
   flex-direction: column;
   justify-content:center;
   align-items:center;
-  /*min-height: 100vh;*/
   margin: 0;
   padding: 0;
   position: fixed;
@@ -55,8 +53,6 @@ h1 {
   align-self: center;
   align-items: center;
   max-height: 10%;
-  /*border: 2px solid black;*/
-  /*background-color: rgba(235,127,0, 0.6 );*/
   align-self: flex-end;
   }
 
@@ -64,9 +60,6 @@ h1 {
   flex-grow: 1;
 }
 
-/*.nav {
-  align-self: center;
-}*/
 .nav {
   align-items: center;
   width: 100%;
@@ -147,9 +140,8 @@ margin: 5% 5%;
     height: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
-    /*background: linear-gradient(to bottom, #1e5799 0%,#2989d8 51%,#7db9e8 100%);*/
+
     background-color: rgba(136,131,143,0.5);
-    /*border: 1px solid rgb(54,10,112);*/
     font-size: 20px;
     font-weight: bold;
     color: #1F1F37;
@@ -159,12 +151,9 @@ margin: 5% 5%;
   }
 
 .submit input:hover{
-    /*background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
-    border-bottom: 3px solid #1695A3;
-    */
-    background-color: rgba(74,77,101,0.8);
-    color: #fff;
-    transition: all .3s;
+  background-color: rgba(74,77,101,0.8);
+  color: #fff;
+  transition: all .3s;
   }
 
 .inline-radio {
@@ -173,13 +162,14 @@ margin: 5% 5%;
   justify-content: space-around;
   margin-bottom: 20px;
   margin-top: 2%;
+  margin-right: 5%;
   font-size: 1.2em;
 }
 #apartment {
-  margin-left: 70px;
+  margin-left: 15px;
 }
 #house {
-  margin-left: -150px;
+  margin-left: 15px;
 }
 input[type="radio"]:checked::before {
     content: "";

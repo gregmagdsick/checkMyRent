@@ -8,7 +8,6 @@
   display: flex;
   width: 40px;
   border-radius: 5px;
-  /*background-color: rgb(90, 186,0);*/
   background-color: rgba(243, 255, 226, 0.7);
   padding: 10px;
   margin-top: 10px;
@@ -16,12 +15,6 @@
   align-content: center;
   justify-content: center;
 }
-
-/*body {
-  display: inline-flex;
-  width: 99%;
-  background-color: #E2E3DF;
-}*/
 
 .main-container {
   display: inline-flex;
@@ -109,12 +102,16 @@
 .rentComparison{
   text-align: center;
   margin:0;
+  font-size: 1.5em;
+  color:#000;
 }
 
 .resultsHeader{
   text-align: center;
   margin-top: 0;
   margin-bottom: 0;
+  font-size: 2em;
+  color: #000;
 }
 
 .zillowLogo {
@@ -123,7 +120,7 @@
 }
 
 .zillowBrandingLinkPara > a {
-  color: #E2E3DF;
+  color: #171ABF;
   margin: 5px;
 }
 
@@ -139,18 +136,26 @@
   width: 90%;
   min-width: 300px;
   min-height: 300px;
+  border: 1px solid #0C0E87;
+  box-shadow: 12px 12px 8px rgba(0,0,0,0.5);
+}
+
+.aerial-view {
+  align-self: center;
+  width: 100%;
+  height: auto;
+  margin:auto;
 }
 
 .hobbit-houses {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-}
+  }
 
-.hobbit-houses img {
+/*.hobbit-houses img {
   width: 500px;
   height: 350px;
   margin-left: 20%;
   border-radius: 10px;
-}
+}*/
