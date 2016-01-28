@@ -49,6 +49,8 @@ Flexbox Layout
 
 .header-container {
   flex-grow: 0;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .footer {
@@ -202,6 +204,10 @@ margin: 10% 5%;
   justify-content: center;
 }
 
+.header img {
+  width: 100px;
+  height: 100px;
+}
 /*p {
     display: flex;
     -webkit-margin-before: 0;
