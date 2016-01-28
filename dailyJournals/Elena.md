@@ -33,6 +33,7 @@ Saturday, 01/23/16
 * added the style for index.html, deleted the css for the older template form<br>
 * moved history.js and history.css to their respective folders<br>
 * added fav icon to all html pages<br>
+* fixed the address validation to include period<br>
 * it looks like there are a couple of bugs in the submitButton.js file on the data retrieved from local storage and used by the google maps.<br>
 * I will make a list of address which check out with both zillow and google maps and we'll roll with those for the presentation<br>
 * I have commented out line 133 in submitButton.js it was returning error 'cannot read property of undefined'<br>
