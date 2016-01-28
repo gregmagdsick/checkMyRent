@@ -129,7 +129,7 @@ margin: 10% 5%;
   	margin: 10px 1em;
     border-radius: 5px;
     }
-.input-fields input:hover, .form input:focus{
+.input-fields input:hover, .input-fields input:focus{
     border-color: #b1b1b1;
     }
 
@@ -144,25 +144,26 @@ margin: 10% 5%;
     display: inline-block;
     }*/
 .submit {
-   margin: auto;
-   border-radius: 10%;
+  align-self: center;
+  /*border: 1p solid #999;*/
 
 }
 
 .submit input{
     width: auto;
-    padding: 9px 20px;
-    background: #1695A3;
+    padding: 30px 30px;
+    background: linear-gradient(to bottom, #1e5799 0%,#2989d8 51%,#7db9e8 100%);
     border: 0;
-    font-size: 14px;
+    font-size: 20px;
+    font-weight: bold;
     color: #FFFFFF;
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 15px;
-    }
 
+    }
 .submit input:hover{
-    background: #225378;
+    background: linear-gradient(to bottom, rgba(181,189,200,1) 0%,rgba(130,140,149,1) 36%,rgba(40,52,59,1) 100%);
     /*border-bottom: 3px solid #1695A3;
     transition: all .1s;*/
   }
@@ -173,7 +174,6 @@ margin: 10% 5%;
   justify-content: space-around;
   margin-bottom: 20px;
   margin-top: 2%;
-
 }
 
 .nav li {
