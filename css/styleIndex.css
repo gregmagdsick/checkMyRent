@@ -170,16 +170,18 @@ margin: 5% 5%;
 .inline-radio {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   margin-bottom: 20px;
   margin-top: 2%;
+  margin-right: 5%;
   font-size: 1.2em;
 }
 #apartment {
-  margin-left: 70px;
+  margin-left: 15px;
 }
 #house {
-  margin-left: -150px;
+  margin-left: 15px;
 }
 input[type="radio"]:checked::before {
     content: "";
