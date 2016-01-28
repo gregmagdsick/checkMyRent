@@ -17,7 +17,13 @@
   justify-content: center;
 }
 
-body {
+/*body {
+  display: inline-flex;
+  width: 99%;
+  background-color: #E2E3DF;
+}*/
+
+.main-container {
   display: inline-flex;
   width: 99%;
   background-color: #E2E3DF;
@@ -70,7 +76,7 @@ body {
   padding: 5%;
   border-radius: 5px;
   /*background-color: rgb(48, 52, 60);*/
-  background-color: rgba(86,104,149,0.3); 
+  background-color: rgba(86,104,149,0.3);
   color: #E2E3DF;
   display: flex;
   flex-direction: column;
@@ -133,4 +139,18 @@ body {
   width: 90%;
   min-width: 300px;
   min-height: 300px;
+}
+
+.hobbit-houses {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.hobbit-houses img {
+  width: 500px;
+  height: 350px;
+  margin-left: 20%;
+  border-radius: 10px;
 }
