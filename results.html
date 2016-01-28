@@ -5,29 +5,36 @@
     <title>Results Page</title>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+    <link rel="icon" type="image/png" href="img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <nav class="leftNavbar">
-      <a href="index.html"><div class="navBarImageHolder"><img src="img/Feedbin-Icon-home-search.png" alt="New Search" class="navImg"></div></a>
-      <a href="history.html"><div class="navBarImageHolder"><img src="img/historyTransparent.png" alt="Search History" class="navImg"></div></a>
-      <a href="about_us.html"><div class="navBarImageHolder"><img src="img/questionMark.png" alt="Search History" class="navImg"></div></a>
-      <div class=invisibleSpacerDiv></div>
-      <p id="zillowBrandingNavPara" class="zillowBrandingNavPara">
-        &#169 Zillow Inc., 2006-2014. Use is subject to <a href="http://www.zillow.com/corp/Terms.htm">Terms of Use.</a> <a href="http://www.zillow.com/zestimate/"> Whats a Zestimate? </a>
-      </p>
-    </nav>
+    <div class="main-container">
+        <nav class="leftNavbar">
+          <a href="index.html"><div class="navBarImageHolder"><img src="img/Feedbin-Icon-home-search.png" alt="New Search" class="navImg"></div></a>
+          <a href="history.html"><div class="navBarImageHolder"><img src="img/historyTransparent.png" alt="Search History" class="navImg"></div></a>
+          <a href="about_us.html"><div class="navBarImageHolder"><img src="img/questionMark.png" alt="Search History" class="navImg"></div></a>
+          <div class=invisibleSpacerDiv></div>
+          <p id="zillowBrandingNavPara" class="zillowBrandingNavPara">
+            &#169 Zillow Inc., 2006-2014. Use is subject to <a href="http://www.zillow.com/corp/Terms.htm">Terms of Use.</a> <a href="http://www.zillow.com/zestimate/"> Whats a Zestimate? </a>
+          </p>
+        </nav>
 
-    <div class="invisibleSpacerDiv"></div>
-    <section class="mainContent" id="mainContent">
-      <div class="mapHolder" id="mapHolder">
-        <div class="resultsHolder" id="resultsHolder"></div>
-        <div id="map" class="map"></div>
-        <div class="zillowBrandingHolder">
-          <a href="http://www.zillow.com"></a><img class="zillowLogo" id="zillowLogo" src="http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_150x40_rounded.gif" width="150" height="40" alt="Zillow Real Estate Search" /></a>
-          <p id="zillowBrandingLinkPara" class="zillowBrandingLinkPara"></p>
-        </div>
-      </div>
+        <div class="invisibleSpacerDiv"></div>
+        <section class="mainContent" id="mainContent">
+          <div class="mapHolder" id="mapHolder">
+            <div class="resultsHolder" id="resultsHolder"></div>
+            <div id="map" class="map"></div>
+            <div class="zillowBrandingHolder">
+              <a href="http://www.zillow.com"></a><img class="zillowLogo" id="zillowLogo" src="http://www.zillow.com/widgets/GetVersionedResource.htm?path=/static/logos/Zillowlogo_150x40_rounded.gif" width="150" height="40" alt="Zillow Real Estate Search" /></a>
+              <p id="zillowBrandingLinkPara" class="zillowBrandingLinkPara"></p>
+            </div>
+          </div>
+        </section>
+    </div>
+    <section class="hobbit-houses">
+      <img src="img/hobbithouse1.jpg" alt="hobbit house"/>
+      <img src="img/hobbithouse2.jpg" alt="hobbit house"/>
     </section>
     <script type="text/javascript" src="js/displayResults.js"></script>
   </body>

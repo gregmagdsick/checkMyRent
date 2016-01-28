@@ -52,8 +52,6 @@ function addPropertyToStorage(objProperty, counter) {
   localStorage.setItem('counter', JSON.stringify(counter));
 }
 
-
-
 //form input validation
 function checkFormInput(getRentForm) {
   var rent = document.getElementById('monthlyRent');
@@ -92,7 +90,7 @@ function checkAddressInput(getRentForm) {
   }
 
   //regular expression to match only alphanumeric characters, commas, dash and space
-  var addressValidation = /^[\w,\-\s]+$/;
+  var addressValidation = /^[\w,\-\s\.]+$/;
 
   if(!addressValidation.test(address.value)) {
     address.value = "error: invalid address";
