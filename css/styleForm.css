@@ -697,3 +697,21 @@ right: -12%;
     align-self: flex-start;
   }
 }
+
+.navImg  {
+  height: 20px;
+  widows: 20px;
+}
+
+.navBarImageHolder{
+  flex-grow: 0;
+  display: inline;
+  width: 40px;
+  border-radius: 3px;
+  background-color: rgb(90, 186,0);
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  align-content: center;
+  justify-content: center;
+}
