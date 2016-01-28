@@ -36,8 +36,8 @@ Saturday, 01/23/16
 * fixed the address validation to include period<br>
 * it looks like there are a couple of bugs in the submitButton.js file on the data retrieved from local storage and used by the google maps.<br>
 * I will make a list of address which check out with both zillow and google maps and we'll roll with those for the presentation<br>
-* I have commented out line 133 in submitButton.js it was returning error 'cannot read property of undefined'<br>
-* property addresses to use for the presentation (I have checked for which which ones zillow has a zestimate - as zestimate is not available for some, it will appear that the zestimate is 0!!!)<br>
+* I have commented out line 133 in submitButton.js it was returning error 'cannot read property of undefined' - NOW this is back in code and the validation is working<br>
+* property addresses to use for the presentation (I have checked for which which ones zillow has a zestimate - as zestimate is not available for some, it will appear that the zestimate is 0!!!) - this is not a problem anymore<br>
   * - 1437 Bellevue Way NE WA 98004<br>
   * - 3419 W Ames Lake Dr NE, Redmond, WA 98053 3 beds 2 baths 1,620 sqft Rent Zestimate 2,495<br>
   * - 3604 SW Graham St. Seattle, WA 98126 gets a zestimate of $2495 - WORKING!!!<br>
