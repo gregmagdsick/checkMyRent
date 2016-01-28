@@ -133,6 +133,11 @@ margin: 5% 5%;
   box-shadow: rgba(0,0,0, 0.20) 0px 0px 8px;
 }
 
+.required:before {
+  color: red;
+   content: '*';
+}
+
 .submit {
   align-self: center;
 }
