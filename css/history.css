@@ -1,3 +1,8 @@
+body {
+  display: inline-flex;
+  width: 99%;
+  background-color: #E2E3DF;
+}
 
 .historyPageTitle{
   border: 1px black solid;
