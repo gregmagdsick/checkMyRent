@@ -1,0 +1,10 @@
+**.md
+LICENSE
+**.html
+**.css
+.gitignore
+css/**
+img/**
+.DS_Store
+.eslintrc
+.eslintignore

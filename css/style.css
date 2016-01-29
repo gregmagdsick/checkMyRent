@@ -30,7 +30,6 @@
   align-items: center;
   flex-direction: column;
   display: flex;
-  /*background-color: rgb(48, 52, 60);*/
   background-color: rgba(86,103,149,1);
 }
 
@@ -68,7 +67,6 @@
 .mapHolder{
   padding: 5%;
   border-radius: 5px;
-  /*background-color: rgb(48, 52, 60);*/
   background-color: rgba(86,104,149,0.3);
   color: #E2E3DF;
   display: flex;

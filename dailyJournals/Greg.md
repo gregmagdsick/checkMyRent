@@ -1,3 +1,16 @@
+Thursday 1/28/16
+  * Checked pages for errors
+  * Fixed use of counter so we can store more than 1 property in LocalStorage
+  * Worked on presentation
+  * Used linter
+  * Deleted unused files
+  * Deleted corpse code
+
+Wednesday 1/27/16
+  * Shared with the team how I think the day should go, identifying remaining technical challenges
+  * Recommended Frazier pair program with Evan to get history.html, history.js working
+  * Looked at fixes for CSS on main page, turns out Elena already was working on fixing these during her work on updating the color scheme/feel of the pages
+
 Tuesday 1/26/16
   Major work day today
   * I led our meeting at the beginning of the day setting up our biggest technical challenges left, so we worked on those first
