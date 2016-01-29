@@ -138,7 +138,6 @@ function storeZillowInLs(result) {
 function makeZillowAjaxCall(address, zip, callbackFunction){
   var inputAddress = address;
   var formattedAddress = inputAddress.replace(/ /g, '-');
-  // var zipCode = zip.toString();
   var cityStateZip = zip.toString();
   var url = 'http://crossorigin.me/' + 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=' + formattedAddress + '&citystatezip=' + cityStateZip + '&rentzestimate=true';
   console.log(url);
