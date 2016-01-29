@@ -12,8 +12,6 @@ Saturday, 01/23/16
 * get variables from the input form and store them in variables. Used source code from<br> * *http://stackoverflow.com/questions/831030/how-to-get-get-request-parameters-in-javascript<br>
 *found an interesting tutorial on making HTTP requests with js http://www.kirupa.com/html5/making_http_requests_js.htm<br>
 
-
-
 * Notes regarding css and structure for page1 and the input form:<br>
 * flexbox used throughout the page<br>
 * Included a normalize.css file from Skeleton<br>
@@ -35,7 +33,7 @@ Saturday, 01/23/16
 * added fav icon to all html pages<br>
 * fixed the address validation to include period<br>
 * it looks like there are a couple of bugs in the submitButton.js file on the data retrieved from local storage and used by the google maps.<br>
-* I will make a list of address which check out with both zillow and google maps and we'll roll with those for the presentation<br>
+* I will make a list of addresses which check out with both zillow api and google maps and we'll roll with those for the presentation<br>
 * I have commented out line 133 in submitButton.js it was returning error 'cannot read property of undefined' - NOW this is back in code and the validation is working<br>
 * property addresses to use for the presentation (I have checked for which which ones zillow has a zestimate - as zestimate is not available for some, it will appear that the zestimate is 0!!!) - this is not a problem anymore<br>
   * - 1437 Bellevue Way NE WA 98004<br>
