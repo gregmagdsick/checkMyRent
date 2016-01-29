@@ -1,4 +1,4 @@
-
+'use strict';
 window.addEventListener('load', function(){
   var counter = Number(localStorage.getItem('counter'));
   var propertyArray = [];

@@ -1,3 +1,20 @@
+'use strict';
+function initMap(currentLat, currentLng) {
+  var mainContent = document.getElementById('mainContent');
+  // var mainContentWidth = mainContent.getElementWidth();
+  var mapDiv = document.getElementById('map');
+  var map = new google.maps.Map(mapDiv, {
+    center: new google.maps.LatLng(currentLat, currentLng),
+    zoom: 15,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  });
+
+  var marker = new google.maps.Marker({
+    position: {lat: currentLat, lng: currentLng}
+  });
+  marker.setMap(map);
+}
+
 window.addEventListener('load', function(){
   var currentLat = Number(localStorage.getItem('mostRecentLat'));
   var currentLng = Number(localStorage.getItem('mostRecentLng'));
@@ -19,21 +36,6 @@ window.addEventListener('load', function(){
   initMap(currentLat, currentLng);
 });
 
-function initMap(currentLat, currentLng) {
-  var mainContent = document.getElementById('mainContent');
-  // var mainContentWidth = mainContent.getElementWidth();
-  var mapDiv = document.getElementById('map');
-  var map = new google.maps.Map(mapDiv, {
-    center: new google.maps.LatLng(currentLat, currentLng),
-    zoom: 15,
-    mapTypeId:google.maps.MapTypeId.ROADMAP
-  });
-
-  var marker = new google.maps.Marker({
-    position: {lat: currentLat, lng: currentLng}
-  });
-  marker.setMap(map);
-}
 
 function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
   var arrowImg;
