@@ -14,7 +14,6 @@ body {
   align-items: center;
   flex-direction: column;
   width: 45%;
-  /*background-color: rgb(48, 52, 60);*/
   background-color: rgba(86,104,149,0.4);
 }
 
@@ -26,7 +25,6 @@ body {
 }
 .aboutUsPersonName {
   text-align: center;
-  /*color:rgb(90, 186,0);*/
   font: 700 1.5em 'Bitter';
   text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
   opacity: 0.8;
@@ -35,7 +33,6 @@ body {
 
 .aboutUsPersonSummary{
   text-align: center;
-  /*color: #FFFEFC;*/
   color: rgba(212,48,36,1);
 }
 
