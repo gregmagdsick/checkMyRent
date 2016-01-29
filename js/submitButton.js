@@ -43,13 +43,13 @@ function handleFormSubmit(e) {
 
   var objProperty = new Property(type, rent, sqFeet, beds, baths, street, zip);
   addPropertyToStorage(objProperty,counter);
-  counter++;
   makeZillowAjaxCall(street, zip, formatZillowResults);
 
 }
 
 function addPropertyToStorage(objProperty, counter) {
-  localStorage.setItem('property'+counter, JSON.stringify(objProperty));
+  localStorage.setItem('property' + counter, JSON.stringify(objProperty));
+  counter++;
   localStorage.setItem('counter', JSON.stringify(counter));
 }
 
@@ -130,7 +130,7 @@ function storeZillowInLs(result) {
   localStorage.setItem('mostRecentLat', parseFloat(result['address']['latitude']['#text']));
   localStorage.setItem('mostRecentLng', parseFloat(result['address']['longitude']['#text']));
   localStorage.setItem('mostRecentRentEstimate', parseFloat(result['rentzestimate']['amount']['#text']));
-  localStorage.setItem('mostRecentCounter', counter - 1);
+  localStorage.setItem('mostRecentCounter', counter);
   localStorage.setItem('mostRecentPropertyLink', result['links']['homedetails']['#text']);
   window.location.href = 'results.html';
 }

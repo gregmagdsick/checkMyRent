@@ -2,7 +2,7 @@
 window.addEventListener('load', function(){
   var counter = Number(localStorage.getItem('counter'));
   var propertyArray = [];
-  for (var i = 0; i < counter +1; i++) {
+  for (var i = 0; i < counter; i++) {
     propertyArray.unshift(['property' + i, JSON.parse(localStorage.getItem('property' + i))]);
     //console.log(propertyArray[i]);
   }
