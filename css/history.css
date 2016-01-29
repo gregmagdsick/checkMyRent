@@ -26,9 +26,10 @@
 
 .container-flex-bottom {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .container-flex-bottom img {
-  width: 100%;
-  height: auto;
+  width: 50%;
+  height: 40%;
+  margin-left:35%;
 }
