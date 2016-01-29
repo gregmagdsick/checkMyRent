@@ -12,14 +12,13 @@ window.addEventListener('load', function(){
 
   for (var i = 0; i < propertyArray.length; i++) {
     var thisHistoryDivEl = document.createElement('div');
-    thisHistoryDivEl.className="historyHolderDiv";
+    thisHistoryDivEl.className='historyHolderDiv';
     thisHistoryDivEl.id= propertyArray[i][0];
-    thisHistoryDivEl.innerHTML ='<h5>' + propertyArray[i][1].street + ' $' + propertyArray[i][1].rent + '/mo </h5>'
+    thisHistoryDivEl.innerHTML ='<h5>' + propertyArray[i][1].street + ' $' + propertyArray[i][1].rent + '/mo </h5>';
     mainContent.appendChild(thisHistoryDivEl);
-    thisHistoryDivEl.addEventListener('click', onHistoryItemClick)
+    thisHistoryDivEl.addEventListener('click', onHistoryItemClick);
   }
-
-})
+});
 
 function onHistoryItemClick(event) {
   console.log(event);
@@ -33,7 +32,6 @@ function onHistoryItemClick(event) {
   var mostRecentCounter = thisLsPropertyKey.slice(8, thisLsPropertyKey.length);
   makeZillowAjaxCall(thisProperty['street'], thisProperty['zip'], formatZillowResults, mostRecentCounter);
 }
-
 
 function formatZillowResults(returnedJson, mostRecentCounter){
   console.log(returnedJson['SearchResults:searchresults']['response']['results']['result']);
@@ -72,10 +70,7 @@ function makeZillowAjaxCall(address, zip, callbackFunction, mostRecentCounter){
       console.log('error');
     }
   });
-
 }
-
-
 
 //code taken from https://davidwalsh.name/convert-xml-json
 function xmlToJson(xml) {
@@ -84,10 +79,10 @@ function xmlToJson(xml) {
   if (xml.nodeType == 1) { // element
     // do attributes
     if (xml.attributes.length > 0) {
-    obj["@attributes"] = {};
+      obj['@attributes'] = {};
       for (var j = 0; j < xml.attributes.length; j++) {
         var attribute = xml.attributes.item(j);
-        obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+        obj['@attributes'][attribute.nodeName] = attribute.nodeValue;
       }
     }
   } else if (xml.nodeType == 3) { // text
@@ -98,10 +93,10 @@ function xmlToJson(xml) {
     for(var i = 0; i < xml.childNodes.length; i++) {
       var item = xml.childNodes.item(i);
       var nodeName = item.nodeName;
-      if (typeof(obj[nodeName]) == "undefined") {
+      if (typeof(obj[nodeName]) == 'undefined') {
         obj[nodeName] = xmlToJson(item);
       } else {
-        if (typeof(obj[nodeName].push) == "undefined") {
+        if (typeof(obj[nodeName].push) == 'undefined') {
           var old = obj[nodeName];
           obj[nodeName] = [];
           obj[nodeName].push(old);
@@ -111,4 +106,4 @@ function xmlToJson(xml) {
     }
   }
   return obj;
-};
+}

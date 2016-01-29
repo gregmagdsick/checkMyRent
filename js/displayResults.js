@@ -1,18 +1,3 @@
-//add a method to be able to get element's widths
-// Element.prototype.getElementWidth = function() {
-//   if (typeof this.clip !== 'undefined') {
-//     return this.clip.width;
-//   } else {
-//     if (this.style.pixelWidth) {
-//       return this.style.pixelWidth;
-//     } else {
-//       return this.offsetWidth;
-//     }
-//   }
-// };
-
-
-//on page load
 window.addEventListener('load', function(){
   var currentLat = Number(localStorage.getItem('mostRecentLat'));
   var currentLng = Number(localStorage.getItem('mostRecentLng'));
@@ -21,7 +6,7 @@ window.addEventListener('load', function(){
   var mostRecentProperty = JSON.parse(localStorage.getItem('property' + mostRecentCounter));
   var mostRecentRent = Number(mostRecentProperty['rent']);
   var mostRecentPropertyLink = localStorage.getItem('mostRecentPropertyLink');
-  var mostRecentStreet = mostRecentProperty['street'] //why are we storing mostRecentStreet in localstorage in addition to the street stored in property?
+  var mostRecentStreet = mostRecentProperty['street']; //why are we storing mostRecentStreet in localstorage in addition to the street stored in property?
   console.log('property' + mostRecentCounter);
   console.log(mostRecentRent);
   console.log(mostRecentRentEstimate);
@@ -32,7 +17,7 @@ window.addEventListener('load', function(){
   console.log(currentLat);
   console.log(currentLng);
   initMap(currentLat, currentLng);
-})
+});
 
 function initMap(currentLat, currentLng) {
   var mainContent = document.getElementById('mainContent');
@@ -46,7 +31,7 @@ function initMap(currentLat, currentLng) {
 
   var marker = new google.maps.Marker({
     position: {lat: currentLat, lng: currentLng}
-  })
+  });
   marker.setMap(map);
 }
 
@@ -59,12 +44,12 @@ function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
   var arrowImgEl = document.createElement('img');
   arrowImgEl.className = 'resultsArrow';
   var resultsTextHolderEl = document.createElement('div');
-  resultsTextHolderEl.className = 'resultsTextHolderEl'
+  resultsTextHolderEl.className = 'resultsTextHolderEl';
   var resultsHeaderEl = document.createElement('h1');
   resultsHeaderEl.className = 'resultsHeader';
   var rentComparisonEl = document.createElement('h5');
   rentComparisonEl.className = 'rentComparison';
-  rentComparisonEl.innerHTML = "Your rent: $" + rent + ", Zillow's Rent Zestimate &#174 : $" + rentEstimate;
+  rentComparisonEl.innerHTML = 'Your rent: $' + rent + ', Zillow\'s Rent Zestimate &#174 : $' + rentEstimate;
   if (rent > 0.95 * rentEstimate && rent < 1.05 * rentEstimate){
     //they are equal
     arrowImgEl.src = 'img/' + arrowArray[2][0];
@@ -100,6 +85,3 @@ function compareRentAndEstimate(rent, rentEstimate, propertyLink, street){
 
   return arrowImg;
 }
-
-
-// window.addEventListener('resize', )

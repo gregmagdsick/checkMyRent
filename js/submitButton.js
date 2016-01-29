@@ -1,7 +1,7 @@
 var getRentForm = document.getElementById('propertyDetails');
 getRentForm.addEventListener('submit', handleFormSubmit);
 var counter = 0;
-window.addEventListener('load', initializeIndex)
+window.addEventListener('load', initializeIndex);
 
 function initializeIndex(){
   if (localStorage.getItem('counter')){
@@ -10,22 +10,22 @@ function initializeIndex(){
 }
 
 function Property(type, rent, sqFeet, beds, baths, street, zip) {
-    this.type = type;
-    this.rent = rent;
-    this.sqFeet = sqFeet;
-    this.beds = beds;
-    this.baths = baths;
-    this.street = street;
-    this.zip = zip;
+  this.type = type;
+  this.rent = rent;
+  this.sqFeet = sqFeet;
+  this.beds = beds;
+  this.baths = baths;
+  this.street = street;
+  this.zip = zip;
 }
 
 function handleFormSubmit(e) {
   e.preventDefault();
 
   if(document.getElementById('apartment').checked) {
-     var type = 'apartment';
-   } else { var type = 'house';
-   }
+    var type = 'apartment';
+  } else { var type = 'house';
+  }
 
   var rent = document.getElementById('monthlyRent').value;
   var sqFeet = document.getElementById('sq-feet').value;
@@ -60,22 +60,22 @@ function checkFormInput(getRentForm) {
   var baths = document.getElementById('baths');
 
   if(isNaN(rent.value)) {
-    rent.value = "Please input a numeric value";
+    rent.value = 'Please input a numeric value';
     return false;
   }
 
-  if(sqFeet.value != "Sq Feet" && isNaN(sqFeet.value )) {
-    sqFeet.value = "Please input a numeric value";
+  if(sqFeet.value != 'Sq Feet' && isNaN(sqFeet.value )) {
+    sqFeet.value = 'Please input a numeric value';
     return false;
   }
 
-  if(beds.value != "Beds" && isNaN(beds.value )) {
-    beds.value = "Please input a numeric value";
+  if(beds.value != 'Beds' && isNaN(beds.value )) {
+    beds.value = 'Please input a numeric value';
     return false;
   }
 
-  if(baths.value != "Baths" && isNaN(baths.value)) {
-    baths.value = "Please input a numeric value";
+  if(baths.value != 'Baths' && isNaN(baths.value)) {
+    baths.value = 'Please input a numeric value';
     return false;
   }
   return true;
@@ -84,8 +84,8 @@ function checkFormInput(getRentForm) {
 //address should contain only alphanumeric characters, used regular expression  http://www.the-art-of-web.com/javascript/validate/
 function checkAddressInput(getRentForm) {
   var address = document.getElementById('street');
-  if (address.value == "" || address.value == "Street address") {
-    address.value = "address cannot be empty!";
+  if (address.value == '' || address.value == 'Street address') {
+    address.value = 'address cannot be empty!';
     return false;
   }
 
@@ -93,7 +93,7 @@ function checkAddressInput(getRentForm) {
   var addressValidation = /^[\w,\-\s\.]+$/;
 
   if(!addressValidation.test(address.value)) {
-    address.value = "error: invalid address";
+    address.value = 'error: invalid address';
     return false;
   }
   return true;
@@ -102,8 +102,8 @@ function checkAddressInput(getRentForm) {
 // zip code validation http://stackoverflow.com/questions/160550/zip-code-us-postal-code-validation
 function checkZipCode(getRentForm) {
   var zipCode = document.getElementById('zip');
-  if (zipCode.value == "" || zipCode.value == "ZIP") {
-    zipCode.value = "Zip cannot be empty!";
+  if (zipCode.value == '' || zipCode.value == 'ZIP') {
+    zipCode.value = 'Zip cannot be empty!';
     return false;
   }
   var zipValidation = /(^\d{5}$)|(^\d{5}-\d{4}$)/;
@@ -137,7 +137,6 @@ function storeZillowInLs(result) {
 function makeZillowAjaxCall(address, zip, callbackFunction){
   var inputAddress = address;
   var formattedAddress = inputAddress.replace(/ /g, '-');
-  // var zipCode = zip.toString();
   var cityStateZip = zip.toString();
   var url = 'http://crossorigin.me/' + 'http://www.zillow.com/webservice/GetSearchResults.htm?zws-id=X1-ZWz19vtt4r677v_3v2ae&address=' + formattedAddress + '&citystatezip=' + cityStateZip + '&rentzestimate=true';
   console.log(url);
@@ -172,10 +171,10 @@ function xmlToJson(xml) {
   if (xml.nodeType == 1) { // element
     // do attributes
     if (xml.attributes.length > 0) {
-      obj["@attributes"] = {};
+      obj['@attributes'] = {};
       for (var j = 0; j < xml.attributes.length; j++) {
         var attribute = xml.attributes.item(j);
-        obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+        obj['@attributes'][attribute.nodeName] = attribute.nodeValue;
       }
     }
   } else if (xml.nodeType == 3) { // text
@@ -186,10 +185,10 @@ function xmlToJson(xml) {
     for(var i = 0; i < xml.childNodes.length; i++) {
       var item = xml.childNodes.item(i);
       var nodeName = item.nodeName;
-      if (typeof(obj[nodeName]) == "undefined") {
+      if (typeof(obj[nodeName]) == 'undefined') {
         obj[nodeName] = xmlToJson(item);
       } else {
-        if (typeof(obj[nodeName].push) == "undefined") {
+        if (typeof(obj[nodeName].push) == 'undefined') {
           var old = obj[nodeName];
           obj[nodeName] = [];
           obj[nodeName].push(old);
@@ -199,4 +198,4 @@ function xmlToJson(xml) {
     }
   }
   return obj;
-};
+}
