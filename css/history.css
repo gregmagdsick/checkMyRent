@@ -1,4 +1,4 @@
-body {
+.main-flex-container {
   display: inline-flex;
   width: 99%;
   background-color: #E2E3DF;
@@ -11,7 +11,6 @@ body {
   display: inline-flex;
   margin-bottom: 5%;
 }
-
 .historyHolderDiv{
   border: 1px black solid;
   justify-content: center;
@@ -20,11 +19,17 @@ body {
   margin-bottom: 1%;
 }
 
-/*.historyHolderDiv :hover {
-  border: red;
-}*/
-
 .mainContent{
   display: flex;
   flex-direction: column;
+}
+
+.container-flex-bottom {
+  display: flex;
+  flex-direction: row;
+}
+.container-flex-bottom img {
+  width: 50%;
+  height: 40%;
+  margin-left:35%;
 }
