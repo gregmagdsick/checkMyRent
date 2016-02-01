@@ -1,6 +1,11 @@
 # checkMyRent
 Final Project for CodeFellows 201d5
 
+Current status of the project 2/1/2016:
+-This site does pull queries for houses. It does NOT work with apartment queries, since the return of the API for that returns multiple apartment types per address.
+-Error logging on the form input does work, but it is not very clear to the user.
+-Local Storage does allow you to view previous searches you have done on that browser.
+
 * Zillow api summary:<br>
 
 * Zillow's api is fairly simple in concept--you ping a url with information encoded in it to describe the information you want from Zillow, and it sends back a response that has the data in it. The base url that you might by pinging looks something like this:<br>

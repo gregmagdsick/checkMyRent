@@ -1,4 +1,5 @@
 Thursday 1/28/16
+  Still taking care of my sick family members
   * Checked pages for errors
   * Fixed use of counter so we can store more than 1 property in LocalStorage
   * Worked on presentation
@@ -7,6 +8,7 @@ Thursday 1/28/16
   * Deleted corpse code
 
 Wednesday 1/27/16
+  My wife and daughter came down with norovirus, so I was taking care of them most of the day
   * Shared with the team how I think the day should go, identifying remaining technical challenges
   * Recommended Frazier pair program with Evan to get history.html, history.js working
   * Looked at fixes for CSS on main page, turns out Elena already was working on fixing these during her work on updating the color scheme/feel of the pages
